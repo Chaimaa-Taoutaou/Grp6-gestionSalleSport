@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="769.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="17.0" layoutY="65.0" prefHeight="418.0" prefWidth="731.0" style="-fx-background-color: #FFF;">
+         <children>
+            <Button layoutX="42.0" layoutY="88.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: #f5053d; -fx-border-radius: #cc0000;" text="Ajouter " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Line endX="566.126220703125" endY="9.407843589782715" layoutX="131.66666666666663" layoutY="50.66666666666667" startX="-143.74755859375" startY="9.407793998718262" stroke="#ecf0f1" AnchorPane.bottomAnchor="351.83331807454425" AnchorPane.leftAnchor="11.166666666666629" AnchorPane.rightAnchor="11.833333333333371" AnchorPane.topAnchor="65.16668192545573" />
+            <Label layoutX="24.0" layoutY="19.0" text="Adhérent">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField layoutX="411.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
+            <TableView fx:id="tableadr" layoutX="13.0" layoutY="143.0" prefHeight="217.0" prefWidth="651.0">
+               <columns>
+                  <TableColumn fx:id="noma" prefWidth="119.0" text="Nom" />
+                  <TableColumn fx:id="prn" prefWidth="119.0" text="Prenom" />
+                  <TableColumn fx:id="tela" prefWidth="119.0" text="Téléphone" />
+                  <TableColumn fx:id="adra" prefWidth="146.0" text="Adresse" />
+                  <TableColumn fx:id="edit" prefWidth="145.0" text="Action" />
+               </columns>
+            </TableView>
+            <Button layoutX="152.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: white;" />
+            <ImageView fitHeight="28.0" fitWidth="78.0" layoutX="131.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/138-1384587_vision-png-transparent-images-eye-icon-font-awesome.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="2.0" layoutY="-3.0" prefHeight="53.0" prefWidth="778.0" style="-fx-background-color: white;">
+         <children>
+            <Button layoutX="707.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/POWER-OFF.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
