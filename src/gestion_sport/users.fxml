@@ -16,7 +16,7 @@
         <children>
       <AnchorPane layoutX="33.0" layoutY="82.0" prefHeight="406.0" prefWidth="719.0" style="-fx-background-color: #FFF;">
          <children>
-            <Button layoutX="22.0" layoutY="88.0" mnemonicParsing="false" onAction="#adduser" prefHeight="27.0" prefWidth="128.0" style="-fx-background-color: #f5053d; -fx-border-radius: #cc0000;" text="Ajouter " textFill="WHITE">
+            <Button layoutX="22.0" layoutY="88.0" mnemonicParsing="false" onAction="#adduser" prefHeight="27.0" prefWidth="128.0" styleClass="ajout" stylesheets="@style.css" text="Ajouter " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField layoutX="411.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
+            <TextField layoutX="411.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." styleClass="lbl" stylesheets="@style.css" />
             <TableView fx:id="tableusers" layoutX="21.0" layoutY="151.0" prefHeight="200.0" prefWidth="637.0">
                <columns>
                   <TableColumn fx:id="n" prefWidth="146.0" text="Nom" />

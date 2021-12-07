@@ -1,0 +1,20 @@
+.buttona{
+       -fx-background-color:  #17202A;
+}
+.buttona:hover{
+       -fx-background-color:   #f5053d;
+}
+
+.ajout{
+       -fx-background-color: #17202A;
+}
+.ajout:hover{
+       -fx-background-color: #f5053d;
+}
+
+.lbl:hover{
+       -fx-border-color:#f5053d;
+}
+
+
+
