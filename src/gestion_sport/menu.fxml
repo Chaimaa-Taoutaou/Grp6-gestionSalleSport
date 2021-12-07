@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="967.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.menuController">
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="967.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.menuController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="514.0" prefWidth="200.0" style="-fx-background-color: #17202A;">
          <children>
@@ -49,16 +49,15 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="buttona" mnemonicParsing="false" onAction="#bta" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #f5053d;" text="   Accueil       " textFill="WHITE" />
-            <Button fx:id="buttons" mnemonicParsing="false" onAction="#btnclick" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #17202A;" text="      Utilisateurs    " textFill="WHITE" />
-            <Button fx:id="buttonf" mnemonicParsing="false" onAction="#bts" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #17202A;" text=" Salles        " textFill="WHITE" />
-            <Button fx:id="buttonadh" mnemonicParsing="false" onAction="#btf" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #17202A;" text="    Formateurs" textFill="WHITE" />
-            <Button fx:id="buttonac" mnemonicParsing="false" onAction="#btad" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #17202A;" text="   Adherents " textFill="WHITE" />
-            <Button fx:id="buttonds" mnemonicParsing="false" onAction="#btact" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #17202A;" text="   Activités    " textFill="WHITE" />
-            <Button fx:id="buttonstt" mnemonicParsing="false" onAction="#btaset" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #17202A;" text="   Parametres" textFill="WHITE" />
+            <Button fx:id="buttona" mnemonicParsing="false" onAction="#bta" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona" text="   Accueil       " textFill="WHITE" />
+            <Button fx:id="buttonf" mnemonicParsing="false" onAction="#btnclick" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona"  text="      Utilisateurs    " textFill="WHITE" />
+            <Button fx:id="buttons" mnemonicParsing="false" onAction="#bts" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona" text=" Salles        " textFill="WHITE" />
+            <Button fx:id="buttonadh" mnemonicParsing="false" onAction="#btf" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona" text="    Formateurs" textFill="WHITE" />
+            <Button fx:id="buttonac" mnemonicParsing="false" onAction="#btad" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona" text="   Adherents " textFill="WHITE" />
+            <Button fx:id="buttonds" mnemonicParsing="false" onAction="#btact" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona" text="   Activités    " textFill="WHITE" />
+            <Button fx:id="buttonstt" mnemonicParsing="false" onAction="#btaset" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="application.css" styleClass="buttona" text="   Parametres" textFill="WHITE" />
          </children>
       </VBox>
      <Pane fx:id="mainPane" layoutX="200.0" prefHeight="514.0" prefWidth="776.0" />
    </children>
 </AnchorPane>
-

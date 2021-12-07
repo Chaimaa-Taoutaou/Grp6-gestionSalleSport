@@ -9,12 +9,12 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="769.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="769.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.FormateurController">
    <children>
     
       <AnchorPane layoutX="62.0" layoutY="79.0" prefHeight="418.0" prefWidth="643.0" style="-fx-background-color: #FFF;">
          <children>
-            <Button layoutX="22.0" layoutY="88.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="128.0" style="-fx-background-color: #f5053d; -fx-border-radius: #cc0000;" text="Ajouter " textFill="WHITE">
+            <Button layoutX="22.0" layoutY="88.0" mnemonicParsing="false" onAction="#addformateur" prefHeight="27.0" prefWidth="128.0" style="-fx-background-color: #f5053d; -fx-border-radius: #cc0000;" text="Ajouter " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -26,13 +26,13 @@
                </font>
             </Label>
             <TextField layoutX="411.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
-            <TableView layoutX="22.0" layoutY="154.0" prefHeight="236.0" prefWidth="636.0">
+            <TableView fx:id="tableformateur" layoutX="22.0" layoutY="154.0" prefHeight="236.0" prefWidth="636.0">
               <columns>
-                <TableColumn prefWidth="117.0" text="nom" />
-                <TableColumn minWidth="3.0" prefWidth="116.0" text="prenom" />
-                  <TableColumn prefWidth="156.0" text="email" />
-                  <TableColumn prefWidth="134.0" text="adresse" />
-                  <TableColumn prefWidth="112.0" text="action" />
+                <TableColumn fx:id="nf" prefWidth="117.0" text="nom" />
+                <TableColumn fx:id="pf" minWidth="3.0" prefWidth="116.0" text="prenom" />
+                  <TableColumn fx:id="ef" prefWidth="156.0" text="email" />
+                  <TableColumn fx:id="af" prefWidth="134.0" text="adresse" />
+                  <TableColumn fx:id="edt" prefWidth="112.0" text="action" />
               </columns>
             </TableView>
          </children>

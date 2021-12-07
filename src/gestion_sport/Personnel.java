@@ -15,7 +15,13 @@ public class Personnel {
 		this.password_p=password_p;
 		this.image_p=image_p;
 	}
+	public Personnel(String nom_p,String prenom_p,String email_p) {
+		this.nom_p=nom_p;
+		this.password_p=prenom_p;
+		this.email_p=email_p;
+	}
 
+	
 	public static int getId_p() {
 		return id_p;
 	}

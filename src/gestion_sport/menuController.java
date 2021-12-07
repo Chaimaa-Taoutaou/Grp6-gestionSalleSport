@@ -102,7 +102,7 @@ public class menuController implements Initializable {
             mainPane.getChildren().add(pane);
     }   
             public void btact() throws IOException{
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/parametres.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/Activite.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage dashboard = new Stage();
             dashboard.setScene(scene);
@@ -110,7 +110,7 @@ public class menuController implements Initializable {
             dashboard.show();
     }  
                public void btaset() throws IOException{
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/Activite.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/parametres.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage dashboard = new Stage();
             dashboard.setScene(scene);
