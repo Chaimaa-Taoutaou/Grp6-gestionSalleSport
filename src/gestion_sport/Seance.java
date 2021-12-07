@@ -5,13 +5,13 @@ import java.sql.Date;
 public class Seance {
 	private static int id_s=0;
 	private Date date_s;
-	private int durée_s;
+	private int dure_s;
 	private int heure_s;
 	
-	public Seance(Date date_s,int durée_s,int heure_s) {
+	public Seance(Date date_s,int dure_s,int heure_s) {
 		id_s++;
 		this.date_s=date_s;
-		this.durée_s=durée_s;
+		this.dure_s=dure_s;
 		this.heure_s=heure_s;
 	}
 
@@ -31,12 +31,12 @@ public class Seance {
 		this.date_s = date_s;
 	}
 
-	public int getDurée_s() {
-		return durée_s;
+	public int getDure_s() {
+		return dure_s;
 	}
 
-	public void setDurée_s(int durée_s) {
-		this.durée_s = durée_s;
+	public void setDure_s(int dure_s) {
+		this.dure_s = dure_s;
 	}
 
 	public int getHeure_s() {

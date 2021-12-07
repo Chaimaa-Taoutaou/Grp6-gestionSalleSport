@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="307.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.AdduserController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="50.0" prefWidth="324.0" style="-fx-background-color: #17202A;">
+         <children>
+            <Label layoutX="14.0" layoutY="17.0" prefHeight="19.0" prefWidth="119.0" text="Modifier Utilisateur" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button layoutX="278.0" layoutY="8.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="42.0" style="-fx-background-color: #17202A;">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="nomr" layoutX="130.0" layoutY="80.0" prefHeight="25.0" prefWidth="177.0" styleClass="lbl" stylesheets="@style.css" />
+      <TextField fx:id="prenomr" layoutX="130.0" layoutY="120.0" prefHeight="25.0" prefWidth="177.0" styleClass="lbl" stylesheets="@style.css" />
+      <TextField fx:id="emailr" layoutX="130.0" layoutY="161.0" prefHeight="25.0" prefWidth="177.0" styleClass="lbl" stylesheets="@style.css" />
+      <Label layoutX="17.0" layoutY="85.0" prefHeight="17.0" prefWidth="61.0" text="Nom ">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="121.0" prefHeight="21.0" prefWidth="92.0" text="Prenom ">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="204.0" prefHeight="21.0" prefWidth="92.0" text="Mot de passe">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="163.0" prefHeight="17.0" prefWidth="61.0" text="E-mail">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajout" layoutX="219.0" layoutY="253.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" styleClass="ajout" stylesheets="@style.css" text="Modifier" textFill="WHITE" />
+      <PasswordField fx:id="pass" layoutX="130.0" layoutY="202.0" prefHeight="25.0" prefWidth="177.0" styleClass="lbl" stylesheets="@style.css" />
+   </children>
+</AnchorPane>
