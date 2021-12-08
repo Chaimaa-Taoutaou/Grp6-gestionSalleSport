@@ -6,6 +6,7 @@ package gestion_sport;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class connecter {
@@ -88,5 +89,32 @@ public class connecter {
      return null;
       
       }
+      
         }
+       
+       public ResultSet chart() {
+      	 
+      	 String req="SELECT adresse, COUNT(*) FROM adherent, club_sportive where adherent.id_cs=club_sportive.id_cs and gender='F' GROUP by adresse order by adresse desc";
+      	try {
+  			return st.executeQuery(req);
+  		} catch (SQLException e) { 
+  			// TODO Auto-generated catch block
+  			return null;
+  		}
+      	 
+         }
+        
+
+        public ResultSet chartM() {
+      	 
+      	 String req="SELECT adresse, COUNT(*) FROM adherent, club_sportive where adherent.id_cs=club_sportive.id_cs and gender='M' GROUP by adresse order by adresse desc";
+      	try {
+  			return st.executeQuery(req);
+  		} catch (SQLException e) { 
+  			// TODO Auto-generated catch block
+  			return null;
+  		}
+  		
+        } 
+       
 }
