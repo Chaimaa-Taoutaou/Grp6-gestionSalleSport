@@ -1,5 +1,6 @@
 
-package gestion_sport;
+package gestion_sport.Controller;
+import gestion_sport.Model.connecter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

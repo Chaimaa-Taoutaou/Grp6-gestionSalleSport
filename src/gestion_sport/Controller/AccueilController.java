@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 
-package gestion_sport;
+package gestion_sport.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
