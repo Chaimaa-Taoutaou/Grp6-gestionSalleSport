@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestion_sport;
+package gestion_sport.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;

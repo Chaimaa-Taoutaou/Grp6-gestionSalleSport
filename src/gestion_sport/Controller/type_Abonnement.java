@@ -1,4 +1,4 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
 public class type_Abonnement {
 	private static int id_talon=0;

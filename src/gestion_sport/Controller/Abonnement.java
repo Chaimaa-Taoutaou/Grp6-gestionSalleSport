@@ -1,14 +1,14 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
 public class Abonnement {
 	private static int id_abon;
 	private String type_abon;
-	private int durée;
+	private int duree;
 	
-	public Abonnement(String type_abon,int durée) {
+	public Abonnement(String type_abon,int duree) {
 		id_abon++;
 		this.type_abon=type_abon;
-		this.durée=durée;
+		this.duree=duree;
 	}
 
 	public static int getId_abon() {
@@ -27,12 +27,12 @@ public class Abonnement {
 		this.type_abon = type_abon;
 	}
 
-	public int getDurée() {
-		return durée;
+	public int getDuree() {
+		return duree;
 	}
 
-	public void setDurée(int durée) {
-		this.durée = durée;
+	public void setDuree(int duree) {
+		this.duree = duree;
 	}
 	
 	

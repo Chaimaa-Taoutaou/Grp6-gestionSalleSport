@@ -1,4 +1,4 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
 public class type_sport {
 	private static int id_s=0;
