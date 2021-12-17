@@ -3,22 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/Gestion_Sport.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/Adhérent.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/menuController.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/Accueil.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/ModifierSal.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/AdduserController.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/Salle.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/AccueilController.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/edituser.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/Formateur.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/menu.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/ModifierSalController.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/connecter.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/userController.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/users.fxml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/gestion_Sport/src/gestion_sport/SalleController.java</file>
+            <file>file:/C:/Users/hp/Desktop/gestionCh/Grp6-gestionSalleSport/src/gestion_sport/Controller/Gestion_Sport.java</file>
+            <file>file:/C:/Users/hp/Desktop/gestionCh/Grp6-gestionSalleSport/src/gestion_sport/Controller/AccueilController.java</file>
+            <file>file:/C:/Users/hp/Desktop/gestionCh/Grp6-gestionSalleSport/src/gestion_sport/Controller/menuController.java</file>
+            <file>file:/C:/Users/hp/Desktop/gestionCh/Grp6-gestionSalleSport/src/gestion_sport/Controller/Abonnement.java</file>
+            <file>file:/C:/Users/hp/Desktop/gestionCh/Grp6-gestionSalleSport/src/gestion_sport/View/Salle.fxml</file>
         </group>
     </open-files>
 </project-private>

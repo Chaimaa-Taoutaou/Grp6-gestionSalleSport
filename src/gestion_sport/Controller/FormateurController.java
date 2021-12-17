@@ -1,5 +1,6 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
+import gestion_sport.Model.connecter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -51,14 +52,10 @@ public class FormateurController implements Initializable {
         pf.setStyle("-fx-alignment : CENTER;");
        ef.setStyle("-fx-alignment : CENTER;");
         af.setStyle("-fx-alignment : CENTER;");
-        try {
-           chargerformateurs();
-        } catch (SQLException ex) {
-           
-        }
+      
     }    
 
-    
+   /* 
     ObservableList  liste = FXCollections.observableArrayList();
               private void afficherformateurs() throws SQLException{
         liste.clear();
@@ -75,10 +72,10 @@ public class FormateurController implements Initializable {
         ResultSet rs=c.formateurinfs();
         afficherformateurs();
         
-        nf.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        pf.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-        ef.setCellValueFactory(new PropertyValueFactory<>("email"));
-        af.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+        nf.setCellValueFactory(new PropertyValueFactory<>("nom_p"));
+        pf.setCellValueFactory(new PropertyValueFactory<>("prenom_p"));
+        ef.setCellValueFactory(new PropertyValueFactory<>("email_p"));
+        af.setCellValueFactory(new PropertyValueFactory<>("adresse_f"));
         edt.setSortable(false);
         //,;
        edt.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Formateur, Boolean>, ObservableValue<Boolean>>(){
@@ -154,7 +151,7 @@ public class FormateurController implements Initializable {
     }
     //
      public  void addformateur() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/addformateur.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport.View/addformateur.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
@@ -163,13 +160,13 @@ public class FormateurController implements Initializable {
     }
        
        public  void editsalle() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/ModifierFormateur.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport.View/ModifierFormateur.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
       //  dashboard.setResizable(false);
         dashboard.show();
     }
-
+*/
 }
    

@@ -20,15 +20,15 @@ import javafx.scene.control.TableView;
 public class ActivitéController implements Initializable {
 
     @FXML
-    private TableView<Activite> tableadr;
+    private TableView<type_sport> tableadr;
     @FXML
-    private TableColumn<Activite,String> noma;
+    private TableColumn<type_sport,String> noma;
     @FXML
-    private TableColumn<Formateur, String> prn;
+    private TableColumn<type_sport, String> prn;
     @FXML
     private TableColumn<salle, String> salle;
     @FXML
-    private TableColumn<Activite, Integer> nbr;
+    private TableColumn<type_sport, Integer> nbr;
    @FXML
     private TableColumn<salle, Boolean> edit;
  

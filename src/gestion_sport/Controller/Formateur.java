@@ -1,6 +1,7 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
-public class Formateur extends Personnel implements Adherent{
+
+public class Formateur extends Personnel {
 	private static int id_f=0;
 	String adresse_f;
 	private float salaire;

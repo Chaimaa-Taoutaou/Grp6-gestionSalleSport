@@ -1,6 +1,6 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
-public class Adherent_externe implements Adherent{
+public class Adherent_externe {
 	private static int id_A=0;
 	private String nom_A,prenom_A,adresse_A,img_A,tel_A,sexe_A;
 	
