@@ -26,7 +26,7 @@ public class connecter {
       System.out.println(ex.getMessage());
       }
     }
-      boolean existe(String name,String pass){
+    public  boolean existe(String name,String pass){
         
     String req ="SELECT * FROM admin WHERE usernam='" + name + "' and  passsword='" + pass + "'";
       try { 
@@ -199,9 +199,33 @@ public class connecter {
          } return -1; 
           
       }
+          public int recupid(String em) {
          
-             
-      
+             String req="Select id from admin where nom_s='"+ em +"'";
+          
+            try { 
+                rs=st.executeQuery(req);
+                if(rs.next()){
+                     return rs.getInt(1);
+                }
+          
+        
+      }catch(Exception ex){
+            
+         } return -1; 
+          
+      }
+           public boolean updatuser(String req){
+     
+      try { 
+          st.executeUpdate(req);
+          return true;
+        
+      }catch(Exception ex){
+            System.out.println("prob ");
+          return false;
+      }   
+           }
           public boolean updatesale(String req){
      
       try { 

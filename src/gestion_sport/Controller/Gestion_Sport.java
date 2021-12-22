@@ -22,9 +22,9 @@ public class Gestion_Sport extends Application {
     public void start(Stage primaryStage) {
        try{
         Parent p;
-            p = FXMLLoader.load(getClass().getResource("/gestion_sport.View/menu.fxml"));
+            p = FXMLLoader.load(getClass().getResource("/gestion_sport/View/menu.fxml"));
          Scene s = new Scene(p);
-        // s.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+       // s.getStylesheets().add(getClass().getResource("/gestion_sport/View/application.css").toExternalForm());
           primaryStage.setScene(s);
          
          primaryStage.initStyle(StageStyle.UTILITY);
@@ -32,8 +32,8 @@ public class Gestion_Sport extends Application {
          primaryStage.show();
             primaryStage.setTitle("     Connection");
         }catch(Exception ex){
-           System.out.println(ex.getMessage());
-          
+         //  System.out.println(ex.getMessage());
+          ex.printStackTrace();
         }
     }
     public static void main(String[] args) {

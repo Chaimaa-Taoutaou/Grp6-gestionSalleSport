@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,16 +14,21 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -46,9 +52,13 @@ public class SalleController implements Initializable {
     private TableColumn<salle, String> emai;
     @FXML
     private TableColumn<salle, Boolean> edt;
-
+     @FXML
+    private TextField search;
+          static String m,n,telephone,ad,vi,id;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+             
          ns.setStyle("-fx-alignment : CENTER;");
         vs.setStyle("-fx-alignment : CENTER;");
        adrs.setStyle("-fx-alignment : CENTER;");
@@ -59,6 +69,7 @@ public class SalleController implements Initializable {
         } catch (SQLException ex) {
            
         }
+   
     }    
 
     
@@ -119,6 +130,8 @@ public class SalleController implements Initializable {
                     String  v = tablesalle.getItems().get(x).getVille();
                     String  emal = tablesalle.getItems().get(x).getEmail();
                     String   a = tablesalle.getItems().get(x).getAdrs();
+                    String ccc=tablesalle.getItems().get(x).getTels();
+                   m=emal;n=nom;vi=v;ad=a; telephone=ccc;
                     try {
                         editsalle() ;
                     } catch (IOException ex) {
@@ -135,12 +148,30 @@ public class SalleController implements Initializable {
             deleteButton.setTextFill(Color.WHITE);
             deleteButton.setOnAction(new EventHandler<ActionEvent>(){
                 @Override
-                public void handle(ActionEvent t) {
+                 public void handle(ActionEvent t) {
                     int x = getIndex();
                     String n = tablesalle.getItems().get(x).getNom();
+                 connecter c=new connecter();
                  
-                    System.out.println(n);
-                }
+                 int id = c.recup(n);
+                 if(c.recup(n)>=0){id=c.recup(n);}else {System.out.println("ddgdd");}
+                 
+                  Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+            
+             dialogC.setHeaderText(null);
+              dialogC.setContentText("Voulez vous vraiment supprimer cette salle");
+              Optional<ButtonType> answer = dialogC.showAndWait();
+             if (answer.get() == ButtonType.OK) {
+                if( c.delsalle("Delete FROM salle where id_s="+ id +"")){  try {
+                    chargersalles();
+                  
+                    } catch (SQLException ex) {
+                        Logger.getLogger(SalleController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+} 
+                     
+                
+                }}
             });}
              //Display button if the row is not empty
         @Override
@@ -157,8 +188,9 @@ public class SalleController implements Initializable {
         }
     }
     //
+    @FXML
      public  void addsalle() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/addsalle.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/addsalle.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
@@ -167,12 +199,43 @@ public class SalleController implements Initializable {
     }
        
        public  void editsalle() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/ModifierSal.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/ModifierSal.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
       //  dashboard.setResizable(false);
         dashboard.show();
     }
-        }
+        public void serch(){
+     
+        FilteredList<salle> filteredData = new FilteredList<>(liste, p -> true);
+
+        
+        search.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(salle -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (salle.getNom().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else if (salle.getVille().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+
+      
+        SortedList<salle> sortedData = new SortedList<>(filteredData);
+
+        sortedData.comparatorProperty().bind(tablesalle.comparatorProperty());
+
+        tablesalle.setItems(sortedData);
+    }
+        
+
+}
    

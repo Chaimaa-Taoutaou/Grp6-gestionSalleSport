@@ -7,9 +7,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 /**
@@ -35,7 +37,8 @@ public class menuController implements Initializable {
     private Button buttonstt;
     
     @FXML Pane mainPane;
-
+      @FXML
+      private javafx.scene.control.Button closeButton;  
     /**
      * Initializes the controller class.
      */
@@ -43,21 +46,21 @@ public class menuController implements Initializable {
    
        public void initialize(URL url, ResourceBundle rb) {
         
-        /*try {
-           Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport.View/Accueil.fxml"));
+      try {
+           Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Accueil.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
-        }*/
+        }
         // TODO
     }    
     public void bta() throws IOException{
         try {
         
-            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/Salle.fxml"));
+            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Salle.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
 
@@ -72,7 +75,7 @@ public class menuController implements Initializable {
         System.out.println(".menuController.btu()");
     try {
         
-            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/users.fxml"));
+            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/users.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
 
@@ -86,7 +89,7 @@ public class menuController implements Initializable {
         
     try {
         
-            Pane pane =  FXMLLoader.load(getClass().getResource("Activité.fxml"));
+            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Activité.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
 
@@ -96,17 +99,17 @@ public class menuController implements Initializable {
         }
     } 
       public void bts() throws IOException{
-         Pane pane =  FXMLLoader.load(getClass().getResource("Salle.fxml"));
+         Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Salle.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
     }  
         public void btf() throws IOException{
-     Pane pane =  FXMLLoader.load(getClass().getResource("Formateur.fxml"));
+     Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Formateur.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
     }  
          public void btad() throws IOException{
-      Pane pane =  FXMLLoader.load(getClass().getResource("Adhérent.fxml"));
+      Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Adhérent.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
     }   
@@ -114,16 +117,27 @@ public class menuController implements Initializable {
       
     }  
                public void btaset() throws IOException{
-    Pane pane =  FXMLLoader.load(getClass().getResource("setting.fxml"));
+    Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/setting.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
     }
    
      public void btaaccueil() throws IOException{
-    Pane pane =  FXMLLoader.load(getClass().getResource("Accueil.fxml"));
+    Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Accueil.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
     }
 
-    
+     public void exit() throws IOException{
+          
+           
+            Stage stage = (Stage) closeButton.getScene().getWindow();
+                stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage dashboard = new Stage();
+        dashboard.setScene(scene);
+         dashboard.show();
+       
+        } 
 }
