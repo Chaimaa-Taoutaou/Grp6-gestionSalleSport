@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestion_sport;
+package gestion_sport.Controller;
 
+import gestion_sport.Model.connecter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
+
 import javafx.scene.control.TextField;
 
 /**
@@ -20,23 +22,45 @@ import javafx.scene.control.TextField;
  */
 public class ModifierSalController implements Initializable {
 
+   
     @FXML
-    private TextField nomr;
+    private Button modifiersalle;
     @FXML
-    private TextField prenomr;
+    private TextField ns;
     @FXML
-    private TextField emailr;
+    private TextField vs;
     @FXML
-    private Button s;
+    private TextField as;
     @FXML
-    private PasswordField pass;
+    private TextField tels;
+    @FXML
+    private TextField ems;
+  
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        unit();
     }    
+    private void unit(){
+        String m=SalleController.m;
+      ns.setText(SalleController.n);
+      ems.setText(m);
+     as.setText(SalleController.ad);
+     vs.setText(SalleController.vi);
+    tels.setText(SalleController.telephone);
+    }
+    public void updatesal(){
+        // String m=SalleController.m;
+    connecter c= new connecter();
+    int id=c.recup(ns.getText());
+    String req="UPDATE salle SET nom_s='"+ ns.getText() +"',adresse='"+ as.getText() +"',ville='"+ vs.getText() +"',tel='"+ tels.getText() +"',email='"+  ems.getText() +"' WHERE  id_s="+ id +"";
+    if(c.updatesale(req)){
+     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             alert.setTitle("");
+                alert.setHeaderText(null);
+              alert.setContentText("cette salle a ete modifiee");
+                   alert.showAndWait();
+    }
     
-}
+    }}

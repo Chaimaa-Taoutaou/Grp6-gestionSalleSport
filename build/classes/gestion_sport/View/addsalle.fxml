@@ -3,43 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.AddsalleController">
+<AnchorPane id="AnchorPane" prefHeight="287.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.AddsalleController">
    <children>
-      <Pane layoutX="-13.0" prefHeight="52.0" prefWidth="325.0" style="-fx-background-color: #17202A;">
-         <children>
-            <Label layoutX="27.0" layoutY="17.0" text="Ajouter Salle " textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Button layoutX="260.0" layoutY="9.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="42.0" style="-fx-background-color: #17202A;">
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/exit.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </Pane>
-      <Label layoutX="11.0" layoutY="75.0" text="Nom " />
-      <TextField fx:id="ns" layoutX="94.0" layoutY="71.0" prefHeight="25.0" prefWidth="185.0" />
-      <Label layoutX="11.0" layoutY="116.0" text="Ville" />
-      <TextField fx:id="vs" layoutX="94.0" layoutY="112.0" prefHeight="25.0" prefWidth="185.0" />
-      <TextField fx:id="ad" layoutX="94.0" layoutY="153.0" prefHeight="25.0" prefWidth="185.0" />
-      <Label layoutX="13.0" layoutY="159.0" text="Adresse" />
-      <Label layoutX="13.0" layoutY="201.0" text="Téléphone" />
-      <TextField fx:id="tels" layoutX="94.0" layoutY="196.0" prefHeight="25.0" prefWidth="185.0" />
-      <Label layoutX="16.0" layoutY="237.0" text="E-mail " />
-      <TextField fx:id="es" layoutX="94.0" layoutY="233.0" prefHeight="25.0" prefWidth="185.0" />
-      <Button fx:id="addsal" layoutX="197.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #17202A;" text="Enregistrer" textFill="WHITE" />
-      <Button fx:id="vider" layoutX="106.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #17202A;" text="Annuler" textFill="WHITE" />
+      <Label layoutX="11.0" layoutY="52.0" text="Nom " />
+      <TextField fx:id="ns" layoutX="94.0" layoutY="49.0" prefHeight="25.0" prefWidth="185.0" />
+      <Label layoutX="11.0" layoutY="93.0" text="Ville" />
+      <TextField fx:id="vs" layoutX="94.0" layoutY="90.0" prefHeight="25.0" prefWidth="185.0" />
+      <TextField fx:id="ad" layoutX="94.0" layoutY="131.0" prefHeight="25.0" prefWidth="185.0" />
+      <Label layoutX="13.0" layoutY="136.0" text="Adresse" />
+      <Label layoutX="13.0" layoutY="178.0" text="Téléphone" />
+      <TextField fx:id="tels" layoutX="94.0" layoutY="174.0" prefHeight="25.0" prefWidth="185.0" />
+      <Label layoutX="16.0" layoutY="214.0" text="E-mail " />
+      <TextField fx:id="es" layoutX="94.0" layoutY="211.0" prefHeight="25.0" prefWidth="185.0" />
+      <Button layoutX="189.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Enregistrer" onAction="#ajoutersal"  />
+      <Button layoutX="102.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Annuler" onAction="#vider"/>
    </children>
 </AnchorPane>
