@@ -1,0 +1,7 @@
+.buttona{
+	-fx-background-color: #17202A;
+}
+
+.buttona:hover{
+    -fx-background-color : #f5053d;
+}
