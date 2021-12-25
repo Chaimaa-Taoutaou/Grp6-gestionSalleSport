@@ -17,7 +17,7 @@ public class Personnel {
 	}
 	public Personnel(String nom_p,String prenom_p,String email_p) {
 		this.nom_p=nom_p;
-		this.password_p=prenom_p;
+		this.prenom_p=prenom_p;
 		this.email_p=email_p;
 	}
 

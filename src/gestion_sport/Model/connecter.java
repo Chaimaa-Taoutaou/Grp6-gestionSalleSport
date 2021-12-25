@@ -20,7 +20,7 @@ public class connecter {
     public connecter() {
         try { 
            Class.forName("com.mysql.jdbc.Driver" );
-          cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/club","root","");
+          cn=DriverManager.getConnection("jdbc:mysql://localhost:3308/club","root","");
           st=cn.createStatement();
       }catch(Exception ex){
       System.out.println(ex.getMessage());
@@ -321,6 +321,102 @@ public class connecter {
      			return null;
      		}
        }
+       
+       
+       
+       public ResultSet formateurinfs(){
+   	    
+   	    
+   	    String req ="SELECT * FROM formateur";
+   	    try { 
+   	        rs =st.executeQuery(req);
+   	       return rs;
+   	        
+   	    }catch(Exception ex){
+   	   return null;
+   	    
+   	    }
+     }
+     
+
+
+   	public boolean addformateur(String n,String p,String e,String a){
+   	    
+   	  
+   	    String req ="INSERT INTO formateur(nom_f,prenom_f,email_f,adresse_f) VALUES ('" + n + "','" + p + "','" + e + "','" + a + "' )";
+   	    try { 
+   	        st.executeUpdate(req);
+   	        return true;
+   	       
+   	        
+   	    }catch(Exception ex){
+   	          System.out.println("f");
+   	          return false;
+   	    
+   	    }
+   	}
+   	
+   	public int recup_formateur(String em) {
+           
+           String req="Select id_f from formateur where nom_f='"+ em +"'";
+        
+          try { 
+              rs=st.executeQuery(req);
+              if(rs.next()){
+                   return rs.getInt(1);
+              }
+        
+      
+    }catch(Exception ex){
+          
+       } return -1; 
+        
+    }
+   	
+   	
+   	public boolean delformteur(String req ){
+   	      
+   	    
+   	     
+   	      try { 
+   	          st.executeUpdate(req);
+   	          return true;
+   	         
+   	        
+   	      }catch(Exception ex){
+   	            System.out.println("supp formateur");
+   	           return false;
+   	         
+   	      }
+   	 }
+   	
+   	public boolean updateformateur(String req){
+           
+           try { 
+               st.executeUpdate(req);
+               return true;
+             
+           }catch(Exception ex){
+                 System.out.println("prob ");
+               return false;
+           }
+       }
+   	
+   	
+   	
+   	public ResultSet searchformateur(String n){
+           String req="select * from formateur  where nom_f like '"+ n +"'";
+           
+           
+            try { 
+   
+           	 return st.executeQuery(req);
+ 
+            }catch(Exception ex){
+           	 System.out.println("prob ");
+           	 return null;
+            }
+        }
 
      
     

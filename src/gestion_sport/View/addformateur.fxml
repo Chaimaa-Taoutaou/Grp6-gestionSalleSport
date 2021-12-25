@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.AddformateurController">
+<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.AddformateurController">
    <children>
       <Pane layoutX="-13.0" prefHeight="52.0" prefWidth="325.0" style="-fx-background-color: #17202A;">
          <children>
-            <Label layoutX="27.0" layoutY="17.0" text="Ajouter Foramteur" textFill="WHITE">
+            <Label layoutX="27.0" layoutY="17.0" text="Ajouter Formateur" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -37,7 +37,7 @@
       <Label layoutX="13.0" layoutY="180.0" text="E-mail" />
       <Label layoutX="13.0" layoutY="222.0" text="Adresse" />
       <TextField fx:id="af" layoutX="94.0" layoutY="217.0" prefHeight="25.0" prefWidth="185.0" />
-      <Button fx:id="addformateur" layoutX="197.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #17202A;" text="Enregistrer" textFill="WHITE" />
+      <Button layoutX="197.0" layoutY="274.0" mnemonicParsing="false" onAction="#ajouterformateur" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #17202A;" text="Enregistrer" textFill="WHITE" />
       <Button fx:id="vider" layoutX="106.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #17202A;" text="Annuler" textFill="WHITE" />
    </children>
 </AnchorPane>

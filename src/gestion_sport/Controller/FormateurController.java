@@ -1,13 +1,15 @@
 package gestion_sport.Controller;
 
-import gestion_sport.Model.connecter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import gestion_sport.Model.connecter;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,7 +20,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -45,6 +49,8 @@ public class FormateurController implements Initializable {
     private TableColumn<Formateur, String> af;
     @FXML
     private TableColumn<Formateur, Boolean> edt;
+    	static String n,pr,m,ad,id;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,15 +58,21 @@ public class FormateurController implements Initializable {
         pf.setStyle("-fx-alignment : CENTER;");
        ef.setStyle("-fx-alignment : CENTER;");
         af.setStyle("-fx-alignment : CENTER;");
-      
+        try {
+           chargerformateurs();
+        } catch (SQLException ex) {
+           
+        }
     }    
 
-   /* 
+    
     ObservableList  liste = FXCollections.observableArrayList();
               private void afficherformateurs() throws SQLException{
         liste.clear();
         connecter c=new connecter();
         ResultSet rs=c.formateurinfs();
+        
+        
         while(rs.next()){
             liste.add(new Formateur(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));  
             tableformateur.setItems(liste);
@@ -112,14 +124,16 @@ public class FormateurController implements Initializable {
                     String  p = tableformateur.getItems().get(x).getPrenom_p();
                     String  emal = tableformateur.getItems().get(x).getEmail_p();
                     String   a = tableformateur.getItems().get(x).getAdresse_f();
+                    n=nom;pr=p;m=emal;ad=a;
+                    
                     try {
-                        editsalle() ;
+                        editformateur();
                     } catch (IOException ex) {
                         Logger.getLogger(FormateurController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                    
                     System.out.println(nom);
-                     
+                    
                 }
                 
             });
@@ -127,13 +141,32 @@ public class FormateurController implements Initializable {
             deleteButton.setStyle("-fx-background-color: #f5053d; -fx-border-radius: #cc0000;");
             deleteButton.setTextFill(Color.WHITE);
             deleteButton.setOnAction(new EventHandler<ActionEvent>(){
-                @Override
+            	@Override
                 public void handle(ActionEvent t) {
                     int x = getIndex();
                     String n = tableformateur.getItems().get(x).getNom_p();
+                 connecter c=new connecter();
                  
-                    System.out.println(n);
-                }
+                 int id = c.recup(n);
+                 if(c.recup_formateur(n)>=0){id=c.recup_formateur(n);}else {System.out.println("ddgdd");}
+                 
+                  Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+            
+             dialogC.setHeaderText(null);
+              dialogC.setContentText("Voulez vous vraiment supprimer ce formateur");
+              Optional<ButtonType> answer = dialogC.showAndWait();
+             if (answer.get() == ButtonType.OK) {
+                if( c.delsalle("Delete FROM formateur where id_f="+ id +"")){  try {
+                    chargerformateurs();
+                  
+                    } catch (SQLException ex) {
+                        Logger.getLogger(FormateurController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+} 
+                     
+                
+                }}
+            	
             });}
              //Display button if the row is not empty
         @Override
@@ -151,7 +184,7 @@ public class FormateurController implements Initializable {
     }
     //
      public  void addformateur() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport.View/addformateur.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/addformateur.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
@@ -159,14 +192,16 @@ public class FormateurController implements Initializable {
         dashboard.show();
     }
        
-       public  void editsalle() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport.View/ModifierFormateur.fxml"));
+       public  void editformateur() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/ModifierFormateur.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
       //  dashboard.setResizable(false);
         dashboard.show();
     }
-*/
+       
+       
+       
 }
    

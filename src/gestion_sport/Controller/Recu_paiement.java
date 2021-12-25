@@ -1,4 +1,4 @@
-package gestion_sport;
+package gestion_sport.Controller;
 
 import java.sql.Date;
 
