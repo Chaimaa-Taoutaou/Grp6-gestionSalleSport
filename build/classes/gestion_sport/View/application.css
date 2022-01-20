@@ -5,3 +5,24 @@
 .buttona:hover{
     -fx-background-color : #f5053d;
 }
+
+.table-view{
+      -fx-background-color:transparent;
+
+}
+
+.column-header-background {
+    -fx-background-color: #17202A;
+    -fx-padding: 5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #17202A;
+    -fx-padding: 5px;
+}
+
+.column-header-background .text{
+    -fx-fill:white;
+}
+
+

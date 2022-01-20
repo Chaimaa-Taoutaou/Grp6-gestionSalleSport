@@ -12,19 +12,19 @@
 
 <AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="1104.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.menuController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="659.0" prefWidth="200.0" style="-fx-background-color: black;">
+      <VBox alignment="TOP_CENTER" prefHeight="659.0" prefWidth="200.0" style="-fx-background-color: #17202A;">
          <children>
             <Pane prefHeight="179.0" prefWidth="200.0">
                <children>
-                  <AnchorPane layoutX="59.0" layoutY="96.0" prefHeight="59.0" prefWidth="141.0" style="-fx-background-color: #17202A;">
+                  <AnchorPane layoutX="59.0" layoutY="96.0" prefHeight="59.0" prefWidth="141.0" style="-fx-background-color: black;">
                      <children>
-                        <Circle fill="#17202a" layoutY="30.0" radius="30.0" stroke="#17202a" strokeType="INSIDE" />
+                        <Circle layoutY="30.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="54.0" layoutY="2.0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Circle accessibleRole="IMAGE_VIEW" fill="WHITE" layoutX="2.0" layoutY="30.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle accessibleRole="IMAGE_VIEW" fill="WHITE" layoutX="2.0" layoutY="30.0" radius="25.0" stroke="#17202a" strokeType="INSIDE" />
                         <ImageView fitHeight="37.0" fitWidth="27.0" layoutX="-11.0" layoutY="17.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../image/login.jpg" />
@@ -46,7 +46,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="buttona" mnemonicParsing="false" onAction="#btaaccueil" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text="   Accueil       " textFill="WHITE">
+            <Button id="buttona" fx:id="buttona" mnemonicParsing="false" onAction="#btaaccueil" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text="   Accueil       " textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -54,15 +54,15 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="buttons" mnemonicParsing="false" onAction="#btnclick" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text="      Utilisateurs    " textFill="WHITE" />
-            <Button fx:id="buttonf" mnemonicParsing="false" onAction="#bts" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text=" Salles        " textFill="WHITE" />
-            <Button fx:id="buttonadh" mnemonicParsing="false" onAction="#btf" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text="    Formateurs" textFill="WHITE" />
-            <Button fx:id="buttonac" mnemonicParsing="false" onAction="#btad" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text="   Adherents " textFill="WHITE" />
-            <Button fx:id="buttonds" mnemonicParsing="false" onAction="#btnactv" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text="   Activités    " textFill="WHITE" />
-            <Button fx:id="buttonstt" mnemonicParsing="false" onAction="#btaset" opacity="0.92" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: black;" styleClass="menu" stylesheets="@application.css" text="   Parametres" textFill="WHITE" />
+            <Button fx:id="buttonaa" mnemonicParsing="false" onAction="#btnclick" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text="      Utilisateurs    " textFill="WHITE" />
+            <Button fx:id="buttons" mnemonicParsing="false" onAction="#bts" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text=" Salles        " textFill="WHITE" />
+            <Button fx:id="buttonadh" mnemonicParsing="false" onAction="#btf" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text="    Formateurs" textFill="WHITE" />
+            <Button fx:id="buttonac" mnemonicParsing="false" onAction="#btad" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text="   Adherents " textFill="WHITE" />
+            <Button fx:id="buttonds" mnemonicParsing="false" onAction="#btnactv" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text="   Activités    " textFill="WHITE" />
+            <Button fx:id="buttonstt" mnemonicParsing="false" onAction="#btaset" opacity="0.92" prefHeight="44.0" prefWidth="203.0" styleClass="buttona" stylesheets="@application.css" text="   Parametres" textFill="WHITE" />
          </children>
       </VBox>
-     <Pane fx:id="mainPane" layoutX="200.0" layoutY="50.0" prefHeight="609.0" prefWidth="904.0" />
+      <Pane fx:id="mainPane" layoutX="200.0" layoutY="50.0" prefHeight="609.0" prefWidth="904.0" />
       <AnchorPane layoutX="201.0" layoutY="-1.0" prefHeight="56.0" prefWidth="903.0" style="-fx-background-color: white;">
          <children>
             <Button layoutX="797.0" layoutY="8.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="39.0" style="-fx-background-color: white;">

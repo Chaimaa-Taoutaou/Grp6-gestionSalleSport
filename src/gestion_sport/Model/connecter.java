@@ -20,7 +20,7 @@ public class connecter {
     public connecter() {
         try { 
            Class.forName("com.mysql.jdbc.Driver" );
-          cn=DriverManager.getConnection("jdbc:mysql://localhost:3308/club","root","");
+          cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/club","root","");
           st=cn.createStatement();
       }catch(Exception ex){
       System.out.println(ex.getMessage());

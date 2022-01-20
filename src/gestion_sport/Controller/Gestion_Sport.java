@@ -24,7 +24,7 @@ public class Gestion_Sport extends Application {
         Parent p;
             p = FXMLLoader.load(getClass().getResource("/gestion_sport/View/menu.fxml"));
          Scene s = new Scene(p);
-       // s.getStylesheets().add(getClass().getResource("/gestion_sport/View/application.css").toExternalForm());
+      s.getStylesheets().add(getClass().getResource("/gestion_sport/View/application.css").toExternalForm());
           primaryStage.setScene(s);
          
          primaryStage.initStyle(StageStyle.UTILITY);
