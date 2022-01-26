@@ -8,6 +8,8 @@ package gestion_sport.Controller;
 import gestion_sport.Model.connecter;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -50,7 +52,7 @@ public class ModifierSalController implements Initializable {
      vs.setText(SalleController.vi);
     tels.setText(SalleController.telephone);
     }
-    public void updatesal(){
+   /* public void updatesal(){
         // String m=SalleController.m;
     connecter c= new connecter();
     int id=c.recup(ns.getText());
@@ -63,4 +65,20 @@ public class ModifierSalController implements Initializable {
                    alert.showAndWait();
     }
     
-    }}
+    }*/
+
+    @FXML
+    void updatesal() {
+        connecter c= new connecter();
+        int id=c.recup(ns.getText());
+        String req="UPDATE salle SET nom_s='"+ ns.getText() +"',adresse='"+ as.getText() +"',ville='"+ vs.getText() +"',tel='"+ tels.getText() +"',email='"+  ems.getText() +"' WHERE  id_s="+ id +"";
+        if(c.updatesale(req)){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText(null);
+            alert.setContentText("cette salle a ete modifiee");
+            alert.showAndWait();
+        }
+    }
+
+}

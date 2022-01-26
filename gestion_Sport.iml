@@ -24,107 +24,20 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module-library">
-      <library name="javafx.base.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.base.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.controls.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.controls.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.fxml.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.fxml.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.graphics.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.graphics.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.media.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.media.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.swing.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.swing.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx.web.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.web.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javafx-swt.jar">
-        <CLASSES>
-          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx-swt.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="gestion_Sport.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/dist/gestion_Sport.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="mysql-connector-java-5.1.23-bin.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/dist/lib/mysql-connector-java-5.1.23-bin.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="JavaFX" level="project" />
-    <orderEntry type="module-library">
-      <library name="mysql-connector-java-8.0.27.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.27" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jfoenix-9.0.10.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/jfoenix-9.0.10-sources.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/jfoenix-9.0.10.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="fontawesomefx-8.2" level="project" />
   </component>
 </module>

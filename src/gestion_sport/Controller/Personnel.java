@@ -21,8 +21,12 @@ public class Personnel {
 		this.email_p=email_p;
 	}
 
-	
-	public static int getId_p() {
+    public Personnel(String nom_f) {
+		this.nom_p=nom_f;
+    }
+
+
+    public static int getId_p() {
 		return id_p;
 	}
 
@@ -77,5 +81,6 @@ public class Personnel {
 	public void setDate_naiss(Date date_naiss) {
 		this.date_naiss = date_naiss;
 	}
+
 	
 }

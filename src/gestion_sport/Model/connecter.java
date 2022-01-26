@@ -4,12 +4,10 @@
 package gestion_sport.Model;
 
 
+import gestion_sport.Controller.ActivityController;
+
 import java.security.MessageDigest;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class connecter {
            
@@ -256,7 +254,7 @@ public class connecter {
                }
             public ResultSet chartM() {
       	 
-      	 String req="SELECT adresse, COUNT(*) FROM adhrent, club_sportive where adhrent.id_cs=club_sportive.id_cs  GROUP by adresse order by adresse desc";
+      	 String req="SELECT c.adresse, COUNT(*) FROM adhrent a, club_sportive c where a.id_cs=c.id_cs GROUP by c.adresse order by c.adresse";
       	try {
   			return st.executeQuery(req);
   		} catch (SQLException e) { 
@@ -418,6 +416,111 @@ public class connecter {
             }
         }
 
-     
-    
+     public ResultSet activityinfs(){
+         String req ="SELECT  type_sport.nom_a,formateur.nom_f,type_sport.prix FROM type_sport, formateur WHERE type_sport.id_f=formateur.id_f";
+         try {
+             rs =st.executeQuery(req);
+             return rs;
+
+         }catch(Exception ex){
+             return null;
+
+         }
+     }
+
+    public ResultSet getFormateur() {
+        String req ="SELECT id_f,nom_f FROM formateur";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public boolean addactivity(String nom,Float prix,Integer formateur){
+
+
+        String req ="INSERT INTO type_sport(nom_a,prix,id_f) VALUES ('" + nom+ "','"+prix+"','"+formateur+"')";
+       // String req ="INSERT INTO formateur(nom_f,prenom_f,email_f,adresse_f) VALUES ('" + n + "','" + p + "','" + e + "','" + a + "' )";
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public int recupActivity(String em) {
+
+        String req="Select id_ts from type_sport where nom_a='"+ em +"'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+
+
+        }catch(Exception ex){
+
+        } return -1;
+
+    }
+
+    public boolean updateActivity(String req){
+
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println("prob ");
+            return false;
+        }
+    }
+    public boolean addseance(String jr, String hf, String hd, Integer id){
+
+
+        String req ="INSERT INTO seance(jour,heureDebut,heureFin,id_ts) VALUES ('"+jr+"','"+hd+"','"+hf+"',"+id+")";
+        // String req ="INSERT INTO formateur(nom_f,prenom_f,email_f,adresse_f) VALUES ('" + n + "','" + p + "','" + e + "','" + a + "' )";
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public ResultSet seanceinfs(){
+        Integer id= ActivityController.id_s;
+        String req ="SELECT heureDebut, heureFin FROM seance where id_ts="+id+"";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public ResultSet seanceacti(){
+
+        String req ="SELECT id_ts FROM seance";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
 }

@@ -57,7 +57,7 @@ public class AccueilController implements Initializable {
 		Salle();
 		Coach();
 		pieChart1();
-	    //chart1();
+	    chart1();
 		
 		
 		
@@ -125,11 +125,12 @@ public class AccueilController implements Initializable {
 		while(rq.next()) {
 			try {
 				series1.getData().add(new XYChart.Data<String, Integer>(rq.getString(1),rq.getInt(2)));
-				barChart.getData().add(series1);
+
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}	}
+		barChart.getData().addAll(series1);
 		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
@@ -155,7 +156,7 @@ public class AccueilController implements Initializable {
 									data.getName()," ", data.pieValueProperty(),"% "
 									)
 							)
-							
+
 					);
 					pieChart.getData().addAll(pieChartData); 
 				} catch (SQLException e) {
