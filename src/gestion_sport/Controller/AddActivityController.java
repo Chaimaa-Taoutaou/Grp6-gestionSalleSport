@@ -33,9 +33,9 @@ public class AddActivityController implements Initializable {
     private TextField prix;
     @FXML
     private Label item;
- static  final Integer[] sform = new Integer[1];
-static Integer nomf;
-static ArrayList<Formateur> f=new ArrayList<>();
+    static  final Integer[] sform = new Integer[1];
+    static Integer nomf;
+    static ArrayList<Formateur> f=new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle rb){
         try{
@@ -68,13 +68,6 @@ static ArrayList<Formateur> f=new ArrayList<>();
             System.out.println(ex.getMessage());
         }
     }
-
-
-
-
-
-
-
     @FXML
     void ajouterActivity() {
 
@@ -101,10 +94,6 @@ static ArrayList<Formateur> f=new ArrayList<>();
        }
 
     }
-
-
-
-
     public void vider(){
 
         nom.setText("");

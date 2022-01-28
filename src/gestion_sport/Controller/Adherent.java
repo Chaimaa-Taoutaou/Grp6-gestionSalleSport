@@ -1,66 +1,96 @@
 package gestion_sport.Controller;
 
-public class Adherent{
-	private static int id_A=0;
-	private String nom_A,prenom_A,adresse_A,img_A,tel_A,sexe_A;
-	
-	public Adherent(String nom_A,String prenom_A,String adresse_A,String imd_A,String tel_A,String sexe_A) {
-		id_A++;
-		this.nom_A=nom_A;
-		this.prenom_A=prenom_A;
-		this.adresse_A=adresse_A;
-		this.tel_A=tel_A;
-		this.sexe_A=sexe_A;
-	}
+import java.sql.Date;
 
-	
+public class Adherent {
 
-	public String getNom_A() {
-		return nom_A;
-	}
+    private static int id_a=0;
+    private String cin;
+    private String nom;
+    private String prenom;
+    private String tel;
+    private String adresse;
+    private String s;
+    private Date dateinscrip;
 
-	public void setNom_A(String nom_A) {
-		this.nom_A = nom_A;
-	}
 
-	public String getPrenom_A() {
-		return prenom_A;
-	}
 
-	public void setPrenom_A(String prenom_A) {
-		this.prenom_A = prenom_A;
-	}
+    public Adherent(String cin, String nom, String prenom, String tel, String adresse, String s, Date dateinscrip) {
+        this.cin = cin;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.tel = tel;
+        this.adresse = adresse;
+        this.s = s;
+        this.dateinscrip = dateinscrip;
+    }
 
-	public String getAdresse_A() {
-		return adresse_A;
-	}
+    public Date getDateinscrip() {
+        return dateinscrip;
+    }
 
-	public void setAdresse_A(String adresse_A) {
-		this.adresse_A = adresse_A;
-	}
+    public static int getId_a() {
+        return id_a;
+    }
 
-	public String getImg_A() {
-		return img_A;
-	}
+    public String getCin() {
+        return cin;
+    }
 
-	public void setImg_A(String img_A) {
-		this.img_A = img_A;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public String getTel_A() {
-		return tel_A;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public void setTel_A(String tel_A) {
-		this.tel_A = tel_A;
-	}
-	
-	public String getSexe_A() {
-		return sexe_A;
-	}
-	
-	public void setSexe_A(String sexe_A) {
-		this.sexe_A=sexe_A;
-	}
-	
+    public String getTel() {
+        return tel;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public String getS() {
+        return s;
+    }
+
+    public static void setId_a(int id_a) {
+        Adherent.id_a = id_a;
+    }
+
+    public void setCin(String cin) {
+        this.cin = cin;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public void setS(String s) {
+        this.s = s;
+    }
+
+
+
+
+
+
 }
+
+
+

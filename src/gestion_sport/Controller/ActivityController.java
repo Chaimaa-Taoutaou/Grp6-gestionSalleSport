@@ -45,7 +45,7 @@ public class ActivityController implements Initializable {
     private TableColumn<Activity, Boolean> action;
 
     @FXML
-    private TableColumn<Activity, Boolean> action2;
+    private TableColumn<Seance, Boolean> action2;
 
     @FXML
     private TableColumn<Seance, String> hdebut;
@@ -73,7 +73,8 @@ public class ActivityController implements Initializable {
 
 
 
-    static String m,n,telephone,ad,vi,id;
+    static String m,n,vi;
+    static String jr_s,hd_s,hf_s;
   public  static Integer id_s;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -82,11 +83,14 @@ public class ActivityController implements Initializable {
         nom.setStyle("-fx-alignment : CENTER;");
         prix.setStyle("-fx-alignment : CENTER;");
         formateur.setStyle("-fx-alignment : CENTER;");
+        jour.setStyle("-fx-alignment : CENTER;");
+        hfin.setStyle("-fx-alignment : CENTER;");
+        hdebut.setStyle("-fx-alignment : CENTER;");
 
 
         try {
             chargerActivities();
-            chargerSeances();
+
         } catch (SQLException ex) {
 
         }
@@ -146,11 +150,133 @@ public class ActivityController implements Initializable {
         connecter c = new connecter();
         afficherSeance();
 
-        jour.setCellValueFactory(new PropertyValueFactory<>("jour"));
+        jour.setCellValueFactory(new PropertyValueFactory<>("date_s"));
         hdebut.setCellValueFactory(new PropertyValueFactory<>("heure_debut"));
         hfin.setCellValueFactory(new PropertyValueFactory<>("heure_fin"));
+        action2.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Seance, Boolean>, ObservableValue<Boolean>>() {
+            @Override
+            public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<Seance, Boolean> p) {
+                return new SimpleBooleanProperty(p.getValue() != null);
+            }
+
+        });
+
+        action2.setCellFactory(new Callback<TableColumn<Seance, Boolean>, TableCell<Seance, Boolean>>() {
+            @Override
+            public TableCell<Seance, Boolean> call(TableColumn<Seance, Boolean> p) {
+                return new ButtonCellSeance(tableseance);
+            }
+        });
 
     }
+    //Define the button cell
+    private class ButtonCellSeance extends TableCell<Seance, Boolean> {
+        Image imgEdit = new Image(getClass().getResourceAsStream("/image/edit.png"), 25, 25, false, false);
+        final Button cellButton2 = new Button();
+        Image imgDeete = new Image(getClass().getResourceAsStream("/image/remove.png"), 25, 25, false, false);
+        final Button deleteButton2 = new Button();
+
+
+
+        ButtonCellSeance(final TableView tblView){
+            cellButton2.setStyle("-fx-background-color: #3cb371; -fx-border-radius: #00CC00;");
+            cellButton2.setTextFill(Color.WHITE);
+            cellButton2.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent t) {
+                    int x = getIndex();
+                    String date_s = tableseance.getItems().get(x).getDate_s();
+                    String  heure_debut = tableseance.getItems().get(x).getHeure_debut();
+                    String  heure_fin = tableseance.getItems().get(x).getHeure_fin();
+                     jr_s=date_s;hd_s=heure_debut;hf_s=heure_fin;
+                    try {
+                        editseance();
+                    } catch (IOException ex) {
+                        Logger.getLogger(ActivityController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+
+
+                }
+
+            });
+
+            //  deleteButton.setStyle("-fx-background-color: #f5053d; -fx-border-radius: #cc0000;");
+            //deleteButton.setTextFill(Color.WHITE);
+
+            deleteButton2.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent t) {
+                    int x = getIndex();
+                    String n = tableseance.getItems().get(x).getHeure_fin();
+                    connecter c=new connecter();
+
+                    int id = c.recupSeance(n);
+                  //  if(c.recup(n)>=0){id=c.recup(n);}else {System.out.println("ddgdd");}
+
+                    Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+
+                    dialogC.setHeaderText(null);
+                    dialogC.setContentText("Voulez vous vraiment supprimer cette séance");
+                    Optional<ButtonType> answer = dialogC.showAndWait();
+                    if (answer.get() == ButtonType.OK) {
+                        if( c.delsalle("Delete FROM seance where id_seance="+ id +"")){  try {
+                            chargerSeances();
+
+                        } catch (SQLException ex) {
+                            Logger.getLogger(SalleController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        }
+
+
+                    }}
+            });}
+        @Override
+        protected void updateItem(Boolean t, boolean empty) {
+            super.updateItem(t, empty);
+            System.out.println(empty);
+            if(!empty){
+
+                deleteButton2.setStyle("-fx-background-color: transparent;-fx-background-size: 5px 5px;");
+                ImageView iv = new ImageView();
+                iv.setImage(imgDeete);
+                iv.setPreserveRatio(true);
+                iv.setSmooth(true);
+                iv.setCache(true);
+                deleteButton2.setGraphic(iv);
+                setGraphic(deleteButton2);
+                setAlignment(Pos.CENTER);
+                setText(null);
+                //cellButton1
+                cellButton2.setStyle("-fx-background-color: transparent;-fx-background-size: 5px 5px;");
+                ImageView v = new ImageView();
+                v.setImage(imgEdit);
+                v.setPreserveRatio(true);
+                v.setSmooth(true);
+                v.setCache(true);
+                cellButton2.setGraphic(v);
+                setGraphic(cellButton2);
+                setAlignment(Pos.CENTER);
+                setText(null);
+
+                                /*HBox managebtn = new HBox(cellButton1, deleteButton);
+                                managebtn.setStyle("-fx-alignment:center");
+                                HBox.setMargin(cellButton1, new Insets(1, -13, 0, 0));
+                                HBox.setMargin(deleteButton, new Insets(1, -13, 0, 0));
+                              //  HBox.setMargin(btnVoir, new Insets(1, 0, 0, 0));
+                                setGraphic(managebtn);
+
+                                setText(null);*/
+                HBox pane = new HBox(cellButton2, deleteButton2);
+                pane.setStyle("-fx-alignment:center");
+                pane.setSpacing(10);
+                setGraphic(pane);
+            }
+
+        }
+    }
+
+
     @FXML
     void addSeance(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/addSeance.fxml"));
@@ -230,9 +356,8 @@ public class ActivityController implements Initializable {
                         int x = getIndex();
                         String n = tableactivity.getItems().get(x).getNom();
                         connecter c=new connecter();
-
                         int id = c.recupActivity(n);
-                        if(c.recup(n)>=0){id=c.recup(n);}else {System.out.println("ddgdd");}
+                       // id=c.recup(n);
 
                         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
 
@@ -240,14 +365,14 @@ public class ActivityController implements Initializable {
                         dialogC.setContentText("Voulez vous vraiment supprimer cette activité");
                         Optional<ButtonType> answer = dialogC.showAndWait();
                         if (answer.get() == ButtonType.OK) {
-                            if( c.delsalle("Delete FROM type_sport where id_ts="+ id +"")){  try {
+
+                            String req="Delete From type_sport where nom_a='"+ n +"'";
+                            c.delser(req);
+                            try {
                                 chargerActivities();
-
                             } catch (SQLException ex) {
-                                Logger.getLogger(SalleController.class.getName()).log(Level.SEVERE, null, ex);
+                                Logger.getLogger(userController.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                            }
-
 
                         }}
                 });}
@@ -309,6 +434,14 @@ public class ActivityController implements Initializable {
     }
     public  void editactivity() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/editactivity.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage dashboard = new Stage();
+        dashboard.setScene(scene);
+        //  dashboard.setResizable(false);
+        dashboard.show();
+    }
+    public  void editseance() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/editSeance.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);

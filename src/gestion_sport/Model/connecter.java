@@ -8,6 +8,7 @@ import gestion_sport.Controller.ActivityController;
 
 import java.security.MessageDigest;
 import java.sql.*;
+import java.time.LocalDate;
 
 public class connecter {
            
@@ -77,7 +78,7 @@ public class connecter {
       }
       }
       public ResultSet adhinfs(){
-      
+
     
       String req ="SELECT * FROM adhrent";
       try { 
@@ -123,7 +124,7 @@ public class connecter {
           st.executeUpdate(req);
         
       }catch(Exception ex){
-            System.out.println("benim");
+            System.out.println(ex.getMessage());
          
       }
       }
@@ -254,7 +255,7 @@ public class connecter {
                }
             public ResultSet chartM() {
       	 
-      	 String req="SELECT c.adresse, COUNT(*) FROM adhrent a, club_sportive c where a.id_cs=c.id_cs GROUP by c.adresse order by c.adresse";
+      	 String req="SELECT s.ville, COUNT(*) FROM adhrent a, salle s where a.id_s=s.id_s GROUP by s.ville order by s.ville";
       	try {
   			return st.executeQuery(req);
   		} catch (SQLException e) { 
@@ -299,7 +300,7 @@ public class connecter {
        }
        
        public ResultSet TotalSalle() {
-     	  String req="SELECT COUNT(*) FROM club_sportive";
+     	  String req="SELECT COUNT(*) FROM salle";
        
        try {
  			return st.executeQuery(req);
@@ -483,7 +484,7 @@ public class connecter {
             return false;
         }
     }
-    public boolean addseance(String jr, String hf, String hd, Integer id){
+    public boolean addseance(LocalDate jr, String hf, String hd, Integer id){
 
 
         String req ="INSERT INTO seance(jour,heureDebut,heureFin,id_ts) VALUES ('"+jr+"','"+hd+"','"+hf+"',"+id+")";
@@ -500,7 +501,7 @@ public class connecter {
 
     public ResultSet seanceinfs(){
         Integer id= ActivityController.id_s;
-        String req ="SELECT heureDebut, heureFin FROM seance where id_ts="+id+"";
+        String req ="SELECT jour,heureDebut, heureFin FROM seance where id_ts="+id+"";
         try {
             rs =st.executeQuery(req);
             return rs;
@@ -523,4 +524,58 @@ public class connecter {
 
         }
     }
+
+    public int recupSeance(String em) {
+
+        String req="Select id_seance from seance where heureFin='"+ em +"'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+
+
+        }catch(Exception ex){
+
+        } return -1;
+
+    }
+    public boolean updateSeance(String req){
+
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+    public boolean addadhr(String req){
+
+
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public ResultSet getabon(){
+
+
+        String req ="SELECT id_abon,type_abon FROM abonnement";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }}
+
 }

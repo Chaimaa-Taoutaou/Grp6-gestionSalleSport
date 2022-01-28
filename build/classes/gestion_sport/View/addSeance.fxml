@@ -14,7 +14,7 @@
       <TextField fx:id="heureDebut" layoutX="111.0" layoutY="103.0" prefHeight="25.0" prefWidth="174.0" />
       <TextField fx:id="HeureFin" layoutX="111.0" layoutY="161.0" prefHeight="25.0" prefWidth="174.0" />
       <Button fx:id="btnSave" layoutX="111.0" layoutY="217.0" mnemonicParsing="false" onAction="#ajouterSeance" text="Enregistrer" />
-      <DatePicker layoutX="110.0" layoutY="46.0" />
-      <Label fx:id="lab" layoutX="40.0" layoutY="264.0" text="Label" />
+      <DatePicker fx:id="datePicker1" layoutX="110.0" layoutY="46.0" />
+      <Button layoutX="22.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#getDate" text="Button" />
    </children>
 </AnchorPane>

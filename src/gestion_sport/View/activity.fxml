@@ -19,7 +19,7 @@
                </font>
             </Label>
             <Line endX="713.126220703125" endY="14.378653526306152" layoutX="136.87377421061194" layoutY="51.49513498942058" startX="-120.0" startY="15.000015258789062" stroke="#ecf0f1" />
-            <TextField fx:id="search" layoutX="592.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
+            <TextField fx:id="search" layoutX="592.0" layoutY="89.0" prefHeight="25.0" prefWidth="261.0" promptText="Recherche.." />
             <TableView fx:id="tableactivity" layoutX="10.0" layoutY="165.0" prefHeight="402.0" prefWidth="440.0">
               <columns>
                 <TableColumn fx:id="nom" prefWidth="110.0" text="Nom" />
@@ -41,7 +41,10 @@
                   <TableColumn fx:id="action2" prefWidth="90.0" text="Action" />
               </columns>
             </TableView>
-            <Button fx:id="btn" layoutX="723.0" layoutY="126.0" mnemonicParsing="false" onAction="#addSeance" prefHeight="25.0" prefWidth="128.0" text="Ajouter des séances" />
+            <Button fx:id="btn" layoutX="723.0" layoutY="126.0" mnemonicParsing="false" onAction="#addSeance" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #17202A;" text="Ajouter des séances" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>

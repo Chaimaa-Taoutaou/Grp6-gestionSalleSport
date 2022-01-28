@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -22,7 +23,7 @@ public class AddSeanceController implements Initializable {
     @FXML
     private Label lab;
     @FXML
-    private final DatePicker datePicker=new DatePicker();
+    private DatePicker datePicker1;
 
     @FXML
     private TextField heureDebut;
@@ -32,26 +33,14 @@ public class AddSeanceController implements Initializable {
             String n,v,e,a,t;
             n=HeureFin.getText();
             v=heureDebut.getText();
-           // e=datePicker.getValue().toString();
-         //   System.out.println(e);
-        datePicker.setOnAction(new EventHandler() {
-            public void handle(Event t) {
-                LocalDate date = datePicker.getValue();
-                System.err.println("Selected date: " + date);
-                lab.setText(String.valueOf(date));
-            }
-        });
-
-           // e=datePicker.toString();
+            LocalDate value=datePicker1.getValue();
             Integer id_activity;
             id_activity=ActivityController.id_s;
                 connecter c =new connecter();
-             /*   if(c.addseance(date,n, v,id_activity)==true){
+               if(c.addseance(value,n, v,id_activity)==true){
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("");
                     alert.setHeaderText(null);
-                    // Stage stage = (Stage) closeButton.getScene().getWindow();
-                    // stage.close();
                     alert.setContentText("Une salle a été ajouté");
 
                     alert.showAndWait();
@@ -60,15 +49,22 @@ public class AddSeanceController implements Initializable {
                 }else {
                     System.out.println("benbactam");
 
-                }*/
+                }
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("id of selected row is: "+ActivityController.id_s);
+        //datePicker.getValue();
+
 
     }
 
+    @FXML
+    void getDate(MouseEvent event) {
 
+        LocalDate value=datePicker1.getValue();
+        System.out.println("date from here: "+value);
+    }
 }
