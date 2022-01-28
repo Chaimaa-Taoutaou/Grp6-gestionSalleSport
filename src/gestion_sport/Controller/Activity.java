@@ -4,6 +4,11 @@ public class Activity {
     private static int id_activity=0;
     private String nom,formateur,prix;
 
+    public Activity(int id_activity,String nom) {
+        this.nom = nom;
+        Activity.id_activity =id_activity;
+    }
+
     public Activity(String nom, String formateur, String prix) {
         id_activity++;
         this.nom = nom;
@@ -42,4 +47,9 @@ public class Activity {
     public void setPrix(String prix) {
         this.prix = prix;
     }
+    @Override
+    public String toString() {
+        return this.getNom();
+    }
+
 }

@@ -70,6 +70,7 @@ public class menuController implements Initializable {
         }
    
     }
+
  
     public void btnclick(){
         System.out.println(".menuController.btu()");

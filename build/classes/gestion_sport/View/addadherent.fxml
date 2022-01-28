@@ -24,8 +24,8 @@
         <Label layoutX="70.0" layoutY="171.0" text="Prenom" />
         <Label layoutX="70.0" layoutY="226.0" text="Tel" />
         <Label layoutX="6.0" layoutY="210.0" />
-        <ComboBox fx:id="abon" layoutX="342.0" layoutY="198.0" prefHeight="17.0" prefWidth="157.0" />
-        <Label layoutX="350.0" layoutY="172.0" text="Abonnement" />
+        <ComboBox fx:id="salle1" layoutX="342.0" layoutY="198.0" prefHeight="17.0" prefWidth="157.0" />
+        <Label layoutX="350.0" layoutY="172.0" text="Salle" />
         <DatePicker fx:id="date" layoutX="342.0" layoutY="252.0" prefHeight="25.0" prefWidth="157.0" />
         <Label layoutX="345.0" layoutY="227.0" text="Date insciption" />
         <Label layoutX="346.0" layoutY="63.0" text="Adresse" />

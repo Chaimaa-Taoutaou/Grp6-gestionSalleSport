@@ -578,4 +578,52 @@ public class connecter {
 
         }}
 
+    public ResultSet getActivity() {
+        String req ="SELECT id_ts,nom_a FROM type_sport";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }}
+
+    public ResultSet getsalle() {
+        String req ="SELECT id_s,nom_s FROM salle";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }}
+
+    public int recupadh(String a) {
+        String req="Select id_a from adhrent where nom='"+ a +"'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+
+
+        }catch(Exception ex){
+
+        } return -1;
+    }
+
+    public ResultSet detadhinfs() {
+        String req ="SELECT a.type_abon, CONCAT(f.nom_f, ' ' ,f.prenom_f) AS \"Nom Complet\",t.nom_a from `abonnement` a,formateur f,adhrent d,type_sport t WHERE a.id_abon=d.id_abon and f.id_f=d.id_f and t.id_ts=d.id_ts ";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
 }

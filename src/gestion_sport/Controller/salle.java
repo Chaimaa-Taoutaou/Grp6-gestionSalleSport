@@ -6,7 +6,12 @@ public class salle {
     private static int id_s=0;
     private String nom,ville,adrs,email,tels;
 
-    public salle(String nom, String ville, String adrs, String email,String tels) {
+    public salle(int id_s,String nom) {
+        this.nom = nom;
+        salle.id_s=id_s;
+    }
+
+    public salle(String nom, String ville, String adrs, String email, String tels) {
         id_s++;
         this.nom = nom;
         this.ville = ville;
@@ -62,6 +67,9 @@ public class salle {
     public void setTels(String tels) {
         this.tels = tels;
     }
-    
+    @Override
+    public String toString() {
+        return this.getNom();
+    }
     
 }

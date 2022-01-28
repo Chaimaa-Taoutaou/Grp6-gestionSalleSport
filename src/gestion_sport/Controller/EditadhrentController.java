@@ -17,6 +17,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static gestion_sport.Controller.AddadhController.se;
+
 public class EditadhrentController implements Initializable {
     @FXML
     private ComboBox<type_Abonnement> abon;
@@ -35,6 +37,8 @@ public class EditadhrentController implements Initializable {
 
     @FXML
     private RadioButton m=new RadioButton("M");
+
+    private String radioButtonLabel;
 
     @FXML
     private TextField nom;
@@ -61,7 +65,10 @@ public class EditadhrentController implements Initializable {
         m.setToggleGroup(gender);
         f.setToggleGroup(gender);
         m.setOnAction(e->{
-
+            radioButtonLabel=m.getText();
+        });
+        f.setOnAction(e->{
+            radioButtonLabel=f.getText();
         });
         try {
             cin.setText(AdherentController.b);
@@ -69,6 +76,7 @@ public class EditadhrentController implements Initializable {
             prenom.setText(AdherentController.c);
             tel.setText(AdherentController.d);
             adr.setText(AdherentController.g);
+
 
             ObservableList<type_Abonnement> listeabon = FXCollections.observableArrayList();
             ResultSet rs = c.getabon();
@@ -91,14 +99,14 @@ public class EditadhrentController implements Initializable {
     }
 
     public void editadr(MouseEvent mouseEvent) {
-        String cN, n, p, t, ar, s = "M", d;
+        String cN, n, p, t, ar, s, d;
         cN = cin.getText();
         n = nom.getText();
         p = prenom.getText();
         t = tel.getText();
         ar = adr.getText();
         d = date.getValue().toString();
-        String req = "UPDATE `adhrent` SET `cin`='" + cN + "', `nom`='" + n + "', `prenom`='" + p + "', `tel`='" + t + "', `adresse`='" + ar + "',`date_register`='" + d + "', `id_abon`=" + sform[0] + "";
+        String req = "UPDATE `adhrent` SET `cin`='" + cN + "', `nom`='" + n + "', `prenom`='" + p + "',sexe='"+radioButtonLabel+"', `tel`='" + t + "', `adresse`='" + ar + "',`date_register`='" + d + "', `id_abon`=" + sform[0] + "";
         if (n.isEmpty() || cN.isEmpty() || p.isEmpty() || ar.isEmpty() || t.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);

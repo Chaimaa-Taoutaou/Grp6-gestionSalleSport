@@ -37,7 +37,9 @@ public class AddSeanceController implements Initializable {
             Integer id_activity;
             id_activity=ActivityController.id_s;
                 connecter c =new connecter();
-               if(c.addseance(value,n, v,id_activity)==true){
+                Integer id_a=c.recupActivity(VoirAdherentController.noma);
+                System.out.println(id_a);
+               if(c.addseance(value,n, v,id_a)){
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("");
                     alert.setHeaderText(null);

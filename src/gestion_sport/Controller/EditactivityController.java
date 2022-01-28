@@ -52,6 +52,11 @@ public class EditactivityController implements Initializable {
     private void unit() throws SQLException {
         nom.setText(n);
         prix.setText(ActivityController.m);
+        formateur.setOnAction((event) -> {
+
+            Object selectedItem = formateur.getSelectionModel().getSelectedItem();
+
+        });
 
         try {
             connecter c = new connecter();

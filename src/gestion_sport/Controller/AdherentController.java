@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,6 +32,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -59,6 +61,7 @@ public class AdherentController implements Initializable {
     @FXML
     private TableColumn<Adherent, Boolean> actionadr;
     static String a,b,c,d,e,f,g;
+    static  int idad;
     Image mapImage = new Image("/image/remove.png");
     ImageView mapView = new ImageView(mapImage);
 
@@ -99,6 +102,18 @@ public class AdherentController implements Initializable {
             liste.add(new Adherent(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getDate(8)));
             tableadr.setItems(liste);
         }
+        tableadr.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Adherent>() {
+            @Override
+            public void changed(ObservableValue<? extends Adherent> observableValue, Adherent oldValue, Adherent newValue) {
+                if(newValue!=null){
+                    if(c.recupadh(newValue.getNom())>=0){
+                        idad=c.recupadh(newValue.getNom());
+                        System.out.println(c.recupadh(newValue.getNom()));
+                    }else {System.out.println("ddgdd");}
+                    System.out.println("Ce nom: "+newValue.getNom());
+                }
+            }
+        });
     }
     private  void chargeradh() throws SQLException{
         connecter c=new connecter();
@@ -162,6 +177,7 @@ public class AdherentController implements Initializable {
                     String  adr = tableadr.getItems().get(x).getAdresse();
 
                     a=nom;b=cin;c=prenom;d=tele;e=dateinscrip;f=s;g=adr;
+                    System.out.println("nom from here " +a);
 
                     try {
                         editadherent();
@@ -172,6 +188,16 @@ public class AdherentController implements Initializable {
 
             });
 
+            btnVoir.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    try {
+                        voiradherent();
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                }
+            });
             deleteButton.setStyle("-fx-background-color: #f5053d; -fx-border-radius: #cc0000;");
             deleteButton.setTextFill(Color.WHITE);
             deleteButton.setOnAction(new EventHandler<ActionEvent>(){
@@ -260,6 +286,17 @@ public class AdherentController implements Initializable {
 
     }
 
+    private void voiradherent() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/voirAdherent.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage dashboard = new Stage();
+        dashboard.setScene(scene);
+        // dashboard.setResizable(false);
+        //dashboard.initStyle(StageStyle.UNDECORATED);
+        dashboard.show();
+
+    }
+
     private void editadherent() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/editadhrent.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -272,7 +309,7 @@ public class AdherentController implements Initializable {
 
     @FXML
     void addadh() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/addadhrent.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/addadherent.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);

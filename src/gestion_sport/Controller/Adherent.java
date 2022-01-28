@@ -12,8 +12,41 @@ public class Adherent {
     private String adresse;
     private String s;
     private Date dateinscrip;
+    private String typeabon;
+    private String nomacti;
+    private String formateur;
+
+    public Adherent(String typeabon, String nomacti, String formateur) {
+        this.typeabon = typeabon;
+        this.nomacti = nomacti;
+        this.formateur = formateur;
+    }
 
 
+
+    public String getTypeabon() {
+        return typeabon;
+    }
+
+    public void setTypeabon(String typeabon) {
+        this.typeabon = typeabon;
+    }
+
+    public String getNomacti() {
+        return nomacti;
+    }
+
+    public void setNomacti(String nomacti) {
+        this.nomacti = nomacti;
+    }
+
+    public String getFormateur() {
+        return formateur;
+    }
+
+    public void setFormateur(String formateur) {
+        this.formateur = formateur;
+    }
 
     public Adherent(String cin, String nom, String prenom, String tel, String adresse, String s, Date dateinscrip) {
         this.cin = cin;

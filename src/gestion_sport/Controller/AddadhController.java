@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class AddadhController implements Initializable {
 
     @FXML
-    private ComboBox<type_Abonnement> abon;
+    private ComboBox<salle> salle1;
 
     @FXML
     private TextField adr;
@@ -30,6 +30,8 @@ public class AddadhController implements Initializable {
 
     @FXML
     private DatePicker date;
+
+    private String radioButtonLabel;
 
     @FXML
     private RadioButton f;
@@ -46,27 +48,29 @@ public class AddadhController implements Initializable {
     @FXML
     private TextField tel;
 
-    static final Integer[] sform = new Integer[1];
+    static final Integer[] asalle = new Integer[1];
+    static String se;
     connecter c = new connecter();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
 
-            ObservableList<type_Abonnement> listeabon = FXCollections.observableArrayList();
-            ResultSet rs = c.getabon();
+            ObservableList<salle> listsalle = FXCollections.observableArrayList();
+            ResultSet rs = c.getsalle();
 
             while (rs.next()) {
-                listeabon.add(new type_Abonnement(rs.getInt(1), rs.getString(2)));
+                listsalle.add(new salle(rs.getInt(1), rs.getString(2)));
 
             }
-            abon.setItems(listeabon);
-            abon.valueProperty().addListener((obs, oldval, newval) -> {
+            salle1.setItems(listsalle);
+            salle1.valueProperty().addListener((obs, oldval, newval) -> {
                 if(newval != null) {
 
-                    sform[0] = newval.getId_talon();
-                    System.out.println(" ID: " + sform[0]);
+                    asalle[0] = newval.getId_s();
+
                 }
             });
+
         } catch (SQLException ex) {
             Logger.getLogger(AddadhController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -78,28 +82,36 @@ public class AddadhController implements Initializable {
 
 
     public void addadr(MouseEvent mouseEvent) {
-        System.out.println(sform[0]);
-        String cN, n, p, t, ar, s = "M";
-        if (f.isSelected()) {
-            s = "f";
+        ToggleGroup gender=new ToggleGroup();
+        m.setToggleGroup(gender);
+        f.setToggleGroup(gender);
+        m.setOnAction(e->{
+            radioButtonLabel= m.getText();
+        });
+        f.setOnAction(e->{
+            radioButtonLabel=f.getText();
+        });
+        gender.selectedToggleProperty().addListener(
+                (observable, oldToggle, newToggle) -> {
+                    if (newToggle == m) {
+                        se = "m";
+                    } else if (newToggle == f) {
+                        se = "f";
+                    } else {
+                        se = "?";
+                    }
+                }
+        );
 
-
-        }
-
+        String cN, n, p, t, ar;
         cN = cin.getText();
         n = nom.getText();
         p = prenom.getText();
         t = tel.getText();
         ar = adr.getText();
-        String req = "INSERT INTO `adhrent` (`cin`, `nom`, `prenom`, `tel`, `adresse`, `sexe`, `date_register`, `id_abon`) " +
-                "VALUES ('" + cN + "','" + n + "','" + p + "','" + t + "','" + ar + "','" + s + "','" + date.getValue() + "'," + sform[0] + ") ";
-        if (n.isEmpty() || cN.isEmpty() || p.isEmpty() || ar.isEmpty() || t.isEmpty() ) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("essayez de remplir tous les champs");
-            alert.showAndWait();
+        String req = "INSERT INTO `adhrent` (`cin`, `nom`, `prenom`, `tel`, `adresse`, `sexe`, `date_register`, id_ts) " +
+                "VALUES ('" + cN + "','" + n + "','" + p + "','" + t + "','" + ar + "','" + radioButtonLabel + "','" + date.getValue() + "'," + asalle[0] + ") ";
 
-        }else {
         if (c.addadhr(req) == true) {
             final Node source = (Node) mouseEvent.getSource();
             final Stage stage = (Stage) source.getScene().getWindow();
@@ -119,7 +131,6 @@ public class AddadhController implements Initializable {
             alert.showAndWait();
 
         }}
-}
 
     public void leave(MouseEvent mouseEvent) {
         final Node source = (Node) mouseEvent.getSource();
