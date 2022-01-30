@@ -138,7 +138,7 @@ public class Detailadh implements Initializable  {
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
         // dashboard.setResizable(false);
-        // dashboard.initStyle(StageStyle.UNDECORATED);
+         dashboard.initStyle(StageStyle.UNDECORATED);
         dashboard.show();
     }
 
@@ -149,6 +149,8 @@ public class Detailadh implements Initializable  {
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
         //dashboard.setResizable(false);
+        dashboard.initStyle(StageStyle.UNDECORATED);
+
         dashboard.show();
 
     }
@@ -197,11 +199,10 @@ public class Detailadh implements Initializable  {
         String adresse = adhérentController.g;
 
         String typeab = c.getAdherentAbonById(cin);
+        Float prix = c.getPrixActivityByCin(cin);
 
 
-
-
-        Adherent adherent = new Adherent(cin,nom,prenom,tel,adresse,sexe,date,typeab);
+        Adherent adherent = new Adherent(cin,nom,prenom,tel,adresse,sexe,date,typeab,prix);
 
         PrintController printController = fxmlLoader.getController();
         printController.displayAdh(adherent);
@@ -209,6 +210,7 @@ public class Detailadh implements Initializable  {
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
         //dashboard.setResizable(false);
+        dashboard.initStyle(StageStyle.UNDECORATED);
         dashboard.show();
     }
 }

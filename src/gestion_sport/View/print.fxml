@@ -281,7 +281,7 @@
       <AnchorPane layoutY="520.0" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #17202A;">
          <children>
             <Button layoutX="217.0" layoutY="20.0" mnemonicParsing="false" onAction="#printBtnAction" text="PrintBtn" />
-            <Button layoutX="331.0" layoutY="20.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="close_imp" layoutX="331.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#quitter" text="close" />
          </children>
       </AnchorPane>
    </children>

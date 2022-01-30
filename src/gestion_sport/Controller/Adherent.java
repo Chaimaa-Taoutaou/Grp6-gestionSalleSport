@@ -21,6 +21,15 @@ public class Adherent {
 	private String typeabon;
 	private String nomacti;
 	private String formateur;
+	private Float prix;
+
+	public Float getPrix() {
+		return prix;
+	}
+
+	public void setPrix(Float prix) {
+		this.prix = prix;
+	}
 
 	public  Adherent(){
 
@@ -44,7 +53,7 @@ public class Adherent {
 		this.dateinscrip = dateinscrip;
 	}
 
-	public Adherent(String cin, String nom, String prenom, String tel, String adresse, String s,String strDate,String typeabon) {
+	public Adherent(String cin, String nom, String prenom, String tel, String adresse, String s,String strDate,String typeabon,Float prix) {
 		this.cin = cin;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -53,6 +62,7 @@ public class Adherent {
 		this.s = s;
 		this.strDate=strDate;
 		this.typeabon=typeabon;
+		this.prix=prix;
 	}
 
 	public Adherent(String cin, String nom, String prenom, String tel, String adresse, String s) {

@@ -23,7 +23,7 @@ public class connecter {
     public connecter() {
         try { 
            Class.forName("com.mysql.jdbc.Driver" );
-          cn=DriverManager.getConnection("jdbc:mysql://localhost:3308/club","root","");
+          cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/club","root","");
           st=cn.createStatement();
       }catch(Exception ex){
       System.out.println(ex.getMessage());
@@ -510,6 +510,22 @@ public class connecter {
 
         } return "null";
 
+
+    }
+
+    public float getPrixActivityByCin(String cin){
+        String req = "select prix from adhrent,type_sport,activity_adrt where adhrent.id_a=activity_adrt.id_a " +
+                "and type_sport.id_ts=activity_adrt.id_ts and adhrent.cin='"+ cin + "'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getFloat(1);
+            }
+
+        }catch(Exception ex){
+
+        } return -1;
 
     }
 

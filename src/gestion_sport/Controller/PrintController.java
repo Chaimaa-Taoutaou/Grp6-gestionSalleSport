@@ -3,7 +3,9 @@ package gestion_sport.Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.print.*;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -11,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class PrintController implements Initializable {
 
@@ -65,9 +68,17 @@ public class PrintController implements Initializable {
         adresse.setText(adherent.getAdresse());
         sexe.setText(adherent.getS());
         abonnement.setText(adherent.getTypeabon());
+        montant.setText(String.valueOf(adherent.getPrix()));
 
     }
 
 
+    public void quitter(MouseEvent mouseEvent) {
+        final Node source = (Node) mouseEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+
+
+    }
 
 }
