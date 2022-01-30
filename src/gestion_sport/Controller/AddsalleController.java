@@ -7,9 +7,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
 public class AddsalleController implements Initializable {
@@ -45,7 +48,7 @@ public class AddsalleController implements Initializable {
     }
     
     
-            public  void ajoutersal() {
+            public  void ajoutersal(MouseEvent event) {
       String n,v,e,a,t;
        n=ns.getText();
        v=vs.getText();
@@ -62,11 +65,13 @@ public class AddsalleController implements Initializable {
         }else {
          connecter c =new connecter();
            if(c.addsalle(n, a, v, t,e)==true){
+               final Node source = (Node) event.getSource();
+               final Stage stage = (Stage) source.getScene().getWindow();
+               stage.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
              alert.setTitle("");
                 alert.setHeaderText(null);
-               // Stage stage = (Stage) closeButton.getScene().getWindow();
-               // stage.close();
+
               alert.setContentText("Une salle a été ajouté");
 
                    alert.showAndWait();
@@ -78,5 +83,11 @@ public class AddsalleController implements Initializable {
            }
         
         }}
-   
+    @FXML
+    private void leave(MouseEvent event) {
+
+        final Node source = (Node) event.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }

@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="904.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.FormateurController">
    <children>
-    
+
       <AnchorPane layoutX="6.0" layoutY="13.0" prefHeight="589.0" prefWidth="893.0" style="-fx-background-color: #FFF;">
          <children>
             <Button layoutX="22.0" layoutY="88.0" mnemonicParsing="false" onAction="#addformateur" prefHeight="27.0" prefWidth="128.0" style="-fx-background-color: #f5053d; -fx-border-radius: #cc0000;" text="Ajouter " textFill="WHITE">
@@ -25,7 +25,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField layoutX="592.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
+            <TextField fx:id="searchFormateur" layoutX="592.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
             <TableView fx:id="tableformateur" layoutX="10.0" layoutY="149.0" prefHeight="402.0" prefWidth="853.0">
               <columns>
                 <TableColumn fx:id="nf" prefWidth="135.0" text="Nom" />

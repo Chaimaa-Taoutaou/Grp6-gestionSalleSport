@@ -4,15 +4,21 @@ import java.sql.Date;
 
 public class Seance {
 	private static int id_s=0;
-	private Date date_s;
+	private String date_s;
+	private String heure_debut;
+	private String heure_fin;
+
+	public Seance(String heure_debut,String heure_fin) {
+		id_s++;
+		this.heure_debut=heure_debut;
+		this.heure_fin=heure_fin;
+	}
 	
-	private int heure_s;
-	
-	public Seance(Date date_s,int heure_s) {
+	public Seance(String date_s,String heure_debut,String heure_fin) {
 		id_s++;
 		this.date_s=date_s;
-	
-		this.heure_s=heure_s;
+		this.heure_debut=heure_debut;
+		this.heure_fin=heure_fin;
 	}
 
 	public static int getId_s() {
@@ -23,23 +29,27 @@ public class Seance {
 		Seance.id_s = id_s;
 	}
 
-	public Date getDate_s() {
+	public String getDate_s() {
 		return date_s;
 	}
 
-	public void setDate_s(Date date_s) {
+	public void setDate_s(String date_s) {
 		this.date_s = date_s;
 	}
 
-
-	public int getHeure_s() {
-		return heure_s;
+	public String getHeure_debut() {
+		return heure_debut;
 	}
 
-	public void setHeure_s(int heure_s) {
-		this.heure_s = heure_s;
+	public void setHeure_debut(String heure_debut) {
+		this.heure_debut = heure_debut;
 	}
-	
-	
-	
+
+	public String getHeure_fin() {
+		return heure_fin;
+	}
+
+	public void setHeure_fin(String heure_fin) {
+		this.heure_fin = heure_fin;
+	}
 }

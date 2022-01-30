@@ -89,7 +89,7 @@ public class menuController implements Initializable {
         
     try {
         
-            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Activité.fxml"));
+            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/activity.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
 

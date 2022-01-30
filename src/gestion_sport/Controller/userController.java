@@ -31,6 +31,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 
@@ -122,8 +123,10 @@ public class userController implements Initializable {
     
     //Define the button cell
     private class ButtonCell extends TableCell<user, Boolean> {
-        final Button cellButton1 = new Button("Modifier");
-        final Button deleteButton = new Button("Supprimer");
+        Image imgEdit = new Image(getClass().getResourceAsStream("/image/edit.png"), 20, 20, false, false);
+        final Button cellButton1 = new Button();
+        Image imgDeete = new Image(getClass().getResourceAsStream("/image/remove.png"), 20, 20, false, false);
+        final Button deleteButton = new Button();
         
         ButtonCell(final TableView tblView){
             cellButton1.setStyle("-fx-background-color: #3cb371; -fx-border-radius: #00CC00;");
@@ -186,31 +189,65 @@ public class userController implements Initializable {
             super.updateItem(t, empty);
             System.out.println(empty);
             if(!empty){
+
+                deleteButton.setStyle("-fx-background-color: transparent;-fx-background-size: 5px 5px;");
+                ImageView iv = new ImageView();
+                iv.setImage(imgDeete);
+                iv.setPreserveRatio(true);
+                iv.setSmooth(true);
+                iv.setCache(true);
+                deleteButton.setGraphic(iv);
+                setGraphic(deleteButton);
+                setAlignment(Pos.CENTER);
+                setText(null);
+                //cellButton1
+                cellButton1.setStyle("-fx-background-color: transparent;-fx-background-size: 5px 5px;");
+                ImageView v = new ImageView();
+                v.setImage(imgEdit);
+                v.setPreserveRatio(true);
+                v.setSmooth(true);
+                v.setCache(true);
+                cellButton1.setGraphic(v);
+                setGraphic(cellButton1);
+                setAlignment(Pos.CENTER);
+                setText(null);
+
+                                /*HBox managebtn = new HBox(cellButton1, deleteButton);
+                                managebtn.setStyle("-fx-alignment:center");
+                                HBox.setMargin(cellButton1, new Insets(1, -13, 0, 0));
+                                HBox.setMargin(deleteButton, new Insets(1, -13, 0, 0));
+                              //  HBox.setMargin(btnVoir, new Insets(1, 0, 0, 0));
+                                setGraphic(managebtn);
+
+                                setText(null);*/
                 HBox pane = new HBox(cellButton1, deleteButton);
+                pane.setStyle("-fx-alignment:center");
                 pane.setSpacing(10);
                 setGraphic(pane);
-                
             }
-            
+
         }
     }
     
     
     @FXML
     private void adduser() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/adduser.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/adduser.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
-               // dashboard.setResizable(false);
+        dashboard.setResizable(false);
+        dashboard.initStyle(StageStyle.UNDECORATED);
 
         dashboard.show();
     }
         
     private void modif() throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/updateuser.fxml"));
+     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/edituser.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
+        dashboard.setResizable(false);
+        dashboard.initStyle(StageStyle.UNDECORATED);
         dashboard.setScene(scene);
           dashboard.show();
  

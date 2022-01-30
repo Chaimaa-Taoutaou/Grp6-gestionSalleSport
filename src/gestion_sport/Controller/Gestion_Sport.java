@@ -14,8 +14,9 @@ import javafx.stage.StageStyle;
 
 /**
  *
- * @author hp
+ * @author
  */
+
 public class Gestion_Sport extends Application {
     
    @Override
