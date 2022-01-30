@@ -4,12 +4,15 @@
 package gestion_sport.Model;
 
 
+import gestion_sport.Controller.ActivityController;
+
 import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 
 public class connecter {
            
@@ -79,9 +82,7 @@ public class connecter {
       }
       }
       public ResultSet adhinfs(){
-      
-    
-      String req ="SELECT * FROM adhrent";
+        String req ="SELECT * FROM adhrent";
       try { 
           rs =st.executeQuery(req);
          return rs;
@@ -129,7 +130,26 @@ public class connecter {
          
       }
       }
-            public ResultSet getibfo(String em){
+    public int iduser(String em) {
+
+        String req ="SELECT id_u FROM utilisateur where email_u='"+ em +"'";
+
+        try {
+            rs = st.executeQuery(req);
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+
+
+        } catch (Exception ex) {
+
+        }
+        return -1;
+
+
+    }
+
+        public ResultSet getibfo(String em){
       
     
       String req ="SELECT * FROM utilisateur where email_u='"+ em +"'";
@@ -144,49 +164,70 @@ public class connecter {
              public boolean updateuser(String req){
      
       try{
-          rs =st.executeQuery(req);
+          st.executeUpdate(req);
          return true;
           
       }catch(Exception ex){
      return false;
       
       }}
-            
-    
-        
-        public boolean addsalle(String n,String a,String v,String tel,String e){
+    public ResultSet getActivity() {
+        String req ="SELECT id_ts,nom_a FROM type_sport";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }}
+
+    public boolean addadhr(String req){
+
+
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public boolean addsalle(String n,String a,String v,String tel,String e){
       
     
       String req ="INSERT INTO salle(nom_s,adresse,ville,tel,email) VALUES ('" + n + "','" +  a + "','" + v + "','" + tel + "','" + e + "')";
-      try { 
+      try {
           st.executeUpdate(req);
           return true;
-          
+
       }catch(Exception ex){
          System.out.println("bir prb var");
            return false;
       }
-      }   
-           
+      }
+
           public boolean delsalle(String req ){
-      
-    
-     
-      try { 
+
+
+
+      try {
           st.executeUpdate(req);
           return true;
-         
-        
+
+
       }catch(Exception ex){
             System.out.println("supp benim");
            return false;
-         
+
       }
-      } 
+      }
          public int recup(String em) {
-         
+
              String req="Select id_s from salle where nom_s='"+ em +"'";
-          
+
             try { 
                 rs=st.executeQuery(req);
                 if(rs.next()){
@@ -418,6 +459,222 @@ public class connecter {
             }
         }
 
-     
-    
+
+
+    public ResultSet getabon(){
+
+
+        String req ="SELECT * FROM abonnement";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }}
+    public ResultSet activityinfs(){
+        String req ="SELECT  type_sport.nom_a,formateur.nom_f,type_sport.prix FROM type_sport, formateur WHERE type_sport.id_f=formateur.id_f";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public ResultSet getFormateur() {
+        String req ="SELECT id_f,nom_f FROM formateur";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public String getAdherentAbonById(String cin){
+        String req = "select type_abon from adhrent,abonnement where cin = '" + cin +
+                "' and adhrent.id_abon=abonnement.id_abon";
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getString(1);
+            }
+
+        }catch(Exception ex){
+
+        } return "null";
+
+
+    }
+
+    public float getPrixActivityByCin(String cin){
+        String req = "select prix from adhrent,type_sport,activity_adrt where adhrent.id_a=activity_adrt.id_a " +
+                "and type_sport.id_ts=activity_adrt.id_ts and adhrent.cin='"+ cin + "'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getFloat(1);
+            }
+
+        }catch(Exception ex){
+
+        } return -1;
+
+    }
+
+    public boolean addactivity(String nom,Float prix,Integer formateur){
+
+
+        String req ="INSERT INTO type_sport(nom_a,prix,id_f) VALUES ('" + nom+ "','"+prix+"','"+formateur+"')";
+        // String req ="INSERT INTO formateur(nom_f,prenom_f,email_f,adresse_f) VALUES ('" + n + "','" + p + "','" + e + "','" + a + "' )";
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public int recupActivity(String em) {
+
+        String req="Select id_ts from type_sport where nom_a='"+ em +"'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+
+
+        }catch(Exception ex){
+
+        } return -1;
+
+    }
+
+    public boolean updateActivity(String req){
+
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println("prob ");
+            return false;
+        }
+    }
+    public boolean addseance(LocalDate jr, String hf, String hd, Integer id){
+
+
+        String req ="INSERT INTO seance(jour,heureDebut,heureFin,id_ts) VALUES ('"+jr+"','"+hd+"','"+hf+"',"+id+")";
+        // String req ="INSERT INTO formateur(nom_f,prenom_f,email_f,adresse_f) VALUES ('" + n + "','" + p + "','" + e + "','" + a + "' )";
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+
+    public ResultSet seanceinfs(){
+        Integer id= ActivityController.id_s;
+        String req ="SELECT jour,heureDebut, heureFin FROM seance where id_ts="+id+"";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public ResultSet seanceacti(){
+
+        String req ="SELECT id_ts FROM seance";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public int recupSeance(String em) {
+
+        String req="Select id_seance from seance where heureFin='"+ em +"'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+
+
+        }catch(Exception ex){
+
+        } return -1;
+
+    }
+    public boolean updateSeance(String req){
+
+        try {
+            st.executeUpdate(req);
+            return true;
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+            return false;
+        }
+    }
+    public int recupadh(String a) {
+        String req="Select id_a from adhrent where nom='"+ a +"'";
+
+        try {
+            rs=st.executeQuery(req);
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+
+
+        }catch(Exception ex){
+
+        } return -1;
+    }
+    public ResultSet detadhinfs() {
+        String req ="SELECT a.type_abon, CONCAT(f.nom_f, ' ' ,f.prenom_f) ,t.nom_a from `abonnement` a,formateur f,adhrent d,type_sport t WHERE a.id_abon=d.id_abon and f.id_f=d.id_a and t.id_ts=d.id_cs ";
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
+
+    public ResultSet adhPrint(String username) {
+        String req ="SELECT * from adherent where " + username ;
+        try {
+            rs =st.executeQuery(req);
+            return rs;
+
+        }catch(Exception ex){
+            return null;
+
+        }
+    }
 }

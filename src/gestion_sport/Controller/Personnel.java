@@ -7,7 +7,7 @@ public class Personnel {
 	private String nom_p,prenom_p,email_p,password_p,image_p;
 	private Date date_naiss;
 	
-	public Personnel(String nom_p,String prenom_p,String email_p,String password_p,String image_p) {
+	public Personnel(String nom_p) {
 		id_p++;
 		this.nom_p=nom_p;
 		this.prenom_p=prenom_p;
