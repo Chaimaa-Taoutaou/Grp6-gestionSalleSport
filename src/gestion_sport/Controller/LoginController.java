@@ -43,7 +43,8 @@ public class LoginController implements Initializable {
             Stage dashboard = new Stage();
             dashboard.setScene(scene);
             //dashboard.setResizable(false);
-            dashboard.setTitle("   Accueil");
+         scene.getStylesheets().add(getClass().getResource("/gestion_sport/View/application.css").toExternalForm());
+            dashboard.setTitle("   Setion d'une salle de sport");
             dashboard.show();}
      else{
      Alert alert = new Alert(Alert.AlertType.ERROR);

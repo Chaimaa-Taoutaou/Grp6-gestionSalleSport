@@ -37,6 +37,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 
@@ -57,12 +58,12 @@ public class SalleController implements Initializable {
     @FXML
     private TableColumn<salle, Boolean> edt;
     @FXML
-    private TextField search;
+    private TextField cc;
     static String m,n,telephone,ad,vi,id;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-
+        chercher();
         ns.setStyle("-fx-alignment : CENTER;");
         vs.setStyle("-fx-alignment : CENTER;");
         adrs.setStyle("-fx-alignment : CENTER;");
@@ -73,7 +74,7 @@ public class SalleController implements Initializable {
         } catch (SQLException ex) {
 
         }
-
+        serch();
     }
 
 
@@ -120,9 +121,9 @@ public class SalleController implements Initializable {
 
     //Define the button cell
     private class ButtonCell extends TableCell<salle, Boolean> {
-        Image imgEdit = new Image(getClass().getResourceAsStream("/image/edit.png"), 25, 25, false, false);
+        Image imgEdit = new Image(getClass().getResourceAsStream("/image/edit.png"), 20, 20, false, false);
         final Button cellButton1 = new Button();
-        Image imgDeete = new Image(getClass().getResourceAsStream("/image/remove.png"), 25, 25, false, false);
+        Image imgDeete = new Image(getClass().getResourceAsStream("/image/remove.png"), 20, 20, false, false);
         final Button deleteButton = new Button();
 
 
@@ -160,13 +161,14 @@ public class SalleController implements Initializable {
                 public void handle(ActionEvent t) {
                     int x = getIndex();
                     String n = tablesalle.getItems().get(x).getNom();
+
                     connecter c=new connecter();
 
                     int id = c.recup(n);
                     if(c.recup(n)>=0){id=c.recup(n);}else {System.out.println("ddgdd");}
 
                     Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
-
+                    dialogC.initStyle(StageStyle.UNDECORATED);
                     dialogC.setHeaderText(null);
                     dialogC.setContentText("Voulez vous vraiment supprimer cette salle");
                     Optional<ButtonType> answer = dialogC.showAndWait();
@@ -223,6 +225,10 @@ public class SalleController implements Initializable {
                 pane.setStyle("-fx-alignment:center");
                 pane.setSpacing(10);
                 setGraphic(pane);
+            }else{
+
+                cellButton1.setGraphic(null);
+                deleteButton.setGraphic(null);
             }
 
         }
@@ -234,7 +240,8 @@ public class SalleController implements Initializable {
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
-        //dashboard.setResizable(false);
+       dashboard.setResizable(false);
+        dashboard.initStyle(StageStyle.UNDECORATED);
         dashboard.show();
     }
 
@@ -243,7 +250,8 @@ public class SalleController implements Initializable {
         Scene scene = new Scene(fxmlLoader.load());
         Stage dashboard = new Stage();
         dashboard.setScene(scene);
-        //  dashboard.setResizable(false);
+        dashboard.setResizable(false);
+        dashboard.initStyle(StageStyle.UNDECORATED);
         dashboard.show();
     }
     public void serch(){
@@ -251,7 +259,7 @@ public class SalleController implements Initializable {
         FilteredList<salle> filteredData = new FilteredList<>(liste, p -> true);
 
 
-        search.textProperty().addListener((observable, oldValue, newValue) -> {
+        cc.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(salle -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -276,6 +284,49 @@ public class SalleController implements Initializable {
         tablesalle.setItems(sortedData);
     }
 
+    void chercher(){
 
+
+        FilteredList<salle> filteredData = new FilteredList<>(liste, b -> true);
+
+        // 2. Set the filter Predicate whenever the filter changes.
+       cc.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(salle -> {
+                // If filter text is empty, display all persons.
+
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (salle.getNom().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+                    return true; // Filter matches first name.
+                } else if (salle.getVille().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches last name.
+                }
+                else if (salle.getAdrs().indexOf(lowerCaseFilter)!=-1)
+                    return true;
+                else
+                    return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        SortedList<salle> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        // 	  Otherwise, sorting the TableView would have no effect.
+        sortedData.comparatorProperty().bind(tablesalle.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        tablesalle.setItems(sortedData);
+
+
+    }
+    public void reflech(ActionEvent actionEvent) throws SQLException {
+        chargersalles();
+    }
 }
    

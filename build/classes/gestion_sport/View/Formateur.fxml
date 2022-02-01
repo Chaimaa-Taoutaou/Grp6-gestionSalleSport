@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="904.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.FormateurController">
+<AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="904.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.FormateurController">
    <children>
     
       <AnchorPane layoutX="6.0" layoutY="13.0" prefHeight="589.0" prefWidth="893.0" style="-fx-background-color: #FFF;">
@@ -26,13 +26,13 @@
                </font>
             </Label>
             <TextField layoutX="592.0" layoutY="89.0" prefHeight="25.0" prefWidth="247.0" promptText="Recherche.." />
-            <TableView fx:id="tableformateur" layoutX="10.0" layoutY="149.0" prefHeight="402.0" prefWidth="853.0">
+            <TableView fx:id="tableformateur" layoutX="19.0" layoutY="149.0" prefHeight="383.0" prefWidth="847.0">
               <columns>
                 <TableColumn fx:id="nf" prefWidth="135.0" text="Nom" />
                 <TableColumn fx:id="pf" minWidth="3.0" prefWidth="157.0" text="Prenom" />
-                  <TableColumn fx:id="ef" prefWidth="187.0" text="Email" />
-                  <TableColumn fx:id="af" prefWidth="210.0" text="Adresse" />
-                  <TableColumn fx:id="edt" prefWidth="163.66668701171875" text="Action" />
+                  <TableColumn fx:id="ef" prefWidth="170.0" text="Email" />
+                  <TableColumn fx:id="af" prefWidth="190.0" text="Adresse" />
+                  <TableColumn fx:id="edt" prefWidth="193.33333333333337" text="Action" />
               </columns>
             </TableView>
          </children>

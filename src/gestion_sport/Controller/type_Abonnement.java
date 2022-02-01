@@ -1,21 +1,21 @@
 package gestion_sport.Controller;
 
 public class type_Abonnement {
-	private static int id_talon=0;
+	private int id_talon;
 	private String libelle;
 	
-	public type_Abonnement(String libelle) {
-		id_talon++;
-		this.libelle=libelle;
+
+
+	public type_Abonnement(int id_talon, String libelle) {
+		this.id_talon = id_talon;
+		this.libelle = libelle;
 	}
 
-	public static int getId_talon() {
+	public  int getId_talon() {
 		return id_talon;
 	}
 
-	public static void setId_talon(int id_talon) {
-		type_Abonnement.id_talon = id_talon;
-	}
+
 
 	public String getLibelle() {
 		return libelle;
@@ -24,6 +24,11 @@ public class type_Abonnement {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	
 
+	@Override
+	public String toString() {
+		return libelle ;
+	}
+
+	String req="insert into ";
 }

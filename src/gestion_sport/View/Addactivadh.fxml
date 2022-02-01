@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="263.0" prefWidth="314.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.AdhrentActivityController">
+
+    <children>
+        <Label layoutX="12.0" layoutY="144.0" text="Activité" />
+        <Label layoutX="11.0" layoutY="106.0" text="Adhrent " />
+        <Button layoutX="122.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #17202A;" text="Annuler" textFill="WHITE" />
+        <Button layoutX="209.0" layoutY="203.0" mnemonicParsing="false" onMouseClicked="#ajouterActivity" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #17202A;" text="Enregistrer" textFill="WHITE" />
+        <ComboBox fx:id="activity" layoutX="101.0" layoutY="144.0" prefHeight="25.0" prefWidth="185.0" />
+        <TextField fx:id="nc" disable="true" layoutX="102.0" layoutY="102.0" prefHeight="25.0" prefWidth="185.0" />
+        <AnchorPane layoutX="-5.0" layoutY="-1.0" prefHeight="49.0" prefWidth="319.0" style="-fx-background-color: #17202A;">
+            <children>
+                <Label layoutX="20.0" layoutY="17.0" prefHeight="19.0" prefWidth="185.0" text="Création d'une nouvelle Activite" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Button layoutX="263.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#leave" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: #17202A;">
+                    <graphic>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../image/exit.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+
+</AnchorPane>

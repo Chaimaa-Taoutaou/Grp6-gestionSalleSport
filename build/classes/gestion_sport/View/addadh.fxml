@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="511.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.AddadhController">
+    <children>
+        <TextField fx:id="cin" layoutX="69.0" layoutY="88.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-color: #17202A; -fx-border-width: 0px 0px 1px 0px;" />
+        <TextField fx:id="nom" layoutX="69.0" layoutY="145.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-color: #17202A; -fx-border-width: 0px 0px 1px 0px;" />
+        <TextField fx:id="prenom" layoutX="70.0" layoutY="197.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-color: #17202A; -fx-border-width: 0px 0px 1px 0px;" />
+        <TextField fx:id="tel" layoutX="70.0" layoutY="251.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-color: #17202A; -fx-border-width: 0px 0px 1px 0px;" />
+        <Label layoutX="73.0" layoutY="71.0" text="CIN" />
+        <Label layoutX="72.0" layoutY="121.0" text="Nom" />
+        <Label layoutX="70.0" layoutY="171.0" text="Prenom" />
+        <Label layoutX="70.0" layoutY="226.0" text="Tel" />
+        <Label layoutX="6.0" layoutY="210.0" />
+        <ComboBox fx:id="abon" layoutX="342.0" layoutY="198.0" prefHeight="17.0" prefWidth="157.0" />
+        <Label layoutX="350.0" layoutY="172.0" text="Abonnement" />
+        <DatePicker fx:id="date" layoutX="342.0" layoutY="252.0" prefHeight="25.0" prefWidth="157.0" />
+        <Label layoutX="345.0" layoutY="227.0" text="Date insciption" />
+        <Label layoutX="346.0" layoutY="63.0" text="Adresse" />
+        <Label layoutX="352.0" layoutY="121.0" text="Sexe" />
+        <RadioButton fx:id="f" layoutX="351.0" layoutY="147.0" mnemonicParsing="false" text="F" />
+        <RadioButton fx:id="m" layoutX="402.0" layoutY="148.0" mnemonicParsing="false" text="M" />
+        <Button layoutX="272.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#addadr" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #17202A;" text="Enregistrer" textFill="WHITE" />
+        <Button layoutX="187.0" layoutY="337.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #17202A;" text="Annuler" textFill="WHITE" />
+
+      <Line endX="5.333343505859375" endY="201.66665649414062" layoutX="285.0" layoutY="82.0" startX="5.333343505859375" startY="2.9999923706054688" strokeWidth="2.0" />
+      <AnchorPane layoutX="-2.0" prefHeight="50.0" prefWidth="539.0" style="-fx-background-color: #17202A;">
+         <children>
+            <Label layoutX="35.0" layoutY="17.0" prefHeight="19.0" prefWidth="119.0" text="Ajouter Adhrent" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="482.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#leave" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: #17202A;">
+               <graphic>
+                  <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../image/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="adr" layoutX="333.0" layoutY="88.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-color: #17202A; -fx-border-width: 0px 0px 1px 0px;" />
+    </children>
+</AnchorPane>

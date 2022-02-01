@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f615c795-3d7e-45af-add5-63880500d41d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_27.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Abonnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Abonnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AccueilController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AccueilController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AddformateurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AddformateurController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AddsalleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AddsalleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AdduserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/AdduserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Adherent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Adherent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Formateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Formateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$ButtonCell$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$ButtonCell$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$ButtonCell$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$ButtonCell$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$ButtonCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController$ButtonCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/FormateurController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Gestion_Sport.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Gestion_Sport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/ModifierFormateurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/ModifierFormateurController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/ModifierSalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/ModifierSalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Personnel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Personnel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Recu_paiement.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Recu_paiement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$ButtonCell$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$ButtonCell$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$ButtonCell$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$ButtonCell$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$ButtonCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController$ButtonCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SalleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Seance.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/Seance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SettingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/SettingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/UpdateuserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/UpdateuserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/menuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/menuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/salle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/salle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/type_Abonnement.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/type_Abonnement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/type_sport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/user.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$ButtonCell$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$ButtonCell$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$ButtonCell$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$ButtonCell$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$ButtonCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController$ButtonCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Controller/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/Model/connecter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/Model/connecter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/Accueil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/Adhérent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/Adhérent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/Formateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/Formateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/ModifierFormateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/ModifierFormateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/ModifierSal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/ModifierSal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/Salle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/Salle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/addformateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/addformateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/addsalle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/addsalle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/adduser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/adduser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/edituser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/edituser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/setting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/setting.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gestion_sport/View/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gestion_sport/View/users.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/image/edit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/image/report_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/image/view.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/image/view.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_Sport.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gestion_Sport.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/AccueilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/AccueilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/AddformateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/AddformateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/AddsalleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/AddsalleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/AdduserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/AdduserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/Adherent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/Adherent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/Formateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/Formateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/FormateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/FormateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/Gestion_Sport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/Gestion_Sport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/ModifierFormateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/ModifierFormateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/ModifierSalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/ModifierSalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/Personnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/Personnel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/SalleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/SalleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/Seance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/Seance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/SettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/SettingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/menuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/menuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/type_Abonnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/type_Abonnement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/type_sport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/Model/connecter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/Model/connecter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/Accueil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/Accueil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/Adhérent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/Adhérent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/Formateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/Formateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/ModifierFormateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/ModifierFormateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/ModifierSal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/ModifierSal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/Salle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/Salle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/addformateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/addformateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/addsalle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/addsalle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/adduser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/adduser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/edituser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/edituser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/setting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/setting.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gestion_sport/View/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gestion_sport/View/users.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/edit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/dit.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/report_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/view.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/view.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="24VLvcsFVjoNWsvpO6XFy3bWp7c" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Gestion_Sport" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gestion_sport.Controller.Gestion_Sport" />
+      <module name="Grp6-gestionSalleSport" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\study\s5\javafx-sdk-17.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f615c795-3d7e-45af-add5-63880500d41d" name="Default Changelist" comment="" />
+      <created>1643711039552</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643711039552</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Grp6_gestionSalleSport$Gestion_Sport.ic" NAME="Gestion_Sport Coverage Results" MODIFIED="1643712713732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

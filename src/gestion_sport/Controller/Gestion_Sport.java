@@ -14,15 +14,16 @@ import javafx.stage.StageStyle;
 
 /**
  *
- * @author hp
+ * @author
  */
+
 public class Gestion_Sport extends Application {
     
    @Override
     public void start(Stage primaryStage) {
        try{
         Parent p;
-            p = FXMLLoader.load(getClass().getResource("/gestion_sport/View/menu.fxml"));
+            p = FXMLLoader.load(getClass().getResource("/gestion_sport/View/login.fxml"));
          Scene s = new Scene(p);
       s.getStylesheets().add(getClass().getResource("/gestion_sport/View/application.css").toExternalForm());
           primaryStage.setScene(s);
@@ -30,7 +31,7 @@ public class Gestion_Sport extends Application {
          primaryStage.initStyle(StageStyle.UTILITY);
          primaryStage.setResizable(false);
          primaryStage.show();
-            primaryStage.setTitle("     Connection");
+            primaryStage.setTitle(" Gestion d'une salle de sport ");
         }catch(Exception ex){
          //  System.out.println(ex.getMessage());
           ex.printStackTrace();

@@ -4,13 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="967.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.SettingController">
+<AnchorPane id="AnchorPane" fx:id="ccc" prefHeight="617.0" prefWidth="967.0" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_sport.Controller.SettingController">
    <children>
  
       <AnchorPane layoutX="15.0" layoutY="40.0" prefHeight="553.0" prefWidth="931.0" style="-fx-background-color: #FFF;">
@@ -21,10 +20,8 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <ImageView fitHeight="75.0" fitWidth="116.0" layoutX="274.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/login.jpg" />
-               </image>
+            <ImageView fx:id="img1" fitHeight="75.0" fitWidth="133.0" layoutX="309.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+
             </ImageView>
             <TextField fx:id="username" alignment="CENTER" layoutX="192.0" layoutY="209.0" prefHeight="25.0" prefWidth="426.0" />
             <Label layoutX="36.0" layoutY="258.0" text="Ancien mot de passe :" />
@@ -36,6 +33,10 @@
             <Button layoutX="566.0" layoutY="385.0" mnemonicParsing="false" style="-fx-background-color: #17202A;" text="Annuler" textFill="WHITE" />
             <PasswordField fx:id="passn" layoutX="191.0" layoutY="299.0" prefHeight="25.0" prefWidth="426.0" />
             <PasswordField fx:id="pass" alignment="CENTER" layoutX="192.0" layoutY="254.0" prefHeight="25.0" prefWidth="426.0" />
+            <Button fx:id="btn1" layoutX="341.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonclick" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #f5053d;" text="Choisir" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.base.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.controls.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.fxml.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.graphics.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.media.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.swing.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.web.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx-swt.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.base.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.controls.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.fxml.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.graphics.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.media.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.swing.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.web.jar!/" />
+    <libelement value="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx-swt.jar!/" />
     <libelement value="jar://$MODULE_DIR$/dist/gestion_Sport.jar!/" />
     <libelement value="jar://$MODULE_DIR$/dist/lib/mysql-connector-java-5.1.23-bin.jar!/" />
-    <libelement value="jar://$MODULE_DIR$/../../../mysql-connector-java-8.0.27/mysql-connector-java-8.0.27.jar!/" />
+    <libelement value="jar://$USER_HOME$/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -27,7 +27,7 @@
     <orderEntry type="module-library">
       <library name="javafx.base.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.base.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.base.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -36,7 +36,7 @@
     <orderEntry type="module-library">
       <library name="javafx.controls.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.controls.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.controls.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -45,7 +45,7 @@
     <orderEntry type="module-library">
       <library name="javafx.fxml.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.fxml.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.fxml.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -54,7 +54,7 @@
     <orderEntry type="module-library">
       <library name="javafx.graphics.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.graphics.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.graphics.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -63,7 +63,7 @@
     <orderEntry type="module-library">
       <library name="javafx.media.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.media.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.media.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -72,7 +72,7 @@
     <orderEntry type="module-library">
       <library name="javafx.swing.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.swing.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.swing.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -81,7 +81,7 @@
     <orderEntry type="module-library">
       <library name="javafx.web.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx.web.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx.web.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -90,7 +90,7 @@
     <orderEntry type="module-library">
       <library name="javafx-swt.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../javafx-sdk-17.0.1/lib/javafx-swt.jar!/" />
+          <root url="jar://C:/Users/javafx-sdk-17.0.1/lib/javafx-swt.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -114,16 +114,16 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="JavaFX" level="project" />
     <orderEntry type="module-library">
       <library name="mysql-connector-java-8.0.27.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../mysql-connector-java-8.0.27/mysql-connector-java-8.0.27.jar!/" />
+          <root url="jar://$USER_HOME$/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.27" level="project" />
   </component>
 </module>

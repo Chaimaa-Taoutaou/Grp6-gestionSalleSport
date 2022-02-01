@@ -1,12 +1,14 @@
 
 
 package gestion_sport.Controller;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
@@ -89,7 +91,7 @@ public class menuController implements Initializable {
         
     try {
         
-            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/Activité.fxml"));
+            Pane pane =  FXMLLoader.load(getClass().getResource("/gestion_sport/View/activity.fxml"));
             mainPane.getChildren().clear();
             mainPane.getChildren().add(pane);
 
@@ -139,5 +141,18 @@ public class menuController implements Initializable {
         dashboard.setScene(scene);
          dashboard.show();
        
-        } 
+        }
+
+
+
+
+    public void deconnecter(javafx.scene.input.MouseEvent mouseEvent) throws IOException {      final Node source = (Node) mouseEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gestion_sport/View/login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage dashboard = new Stage();
+        dashboard.setScene(scene);
+        dashboard.show();
+    }
 }
